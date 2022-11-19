@@ -3,4 +3,3 @@
 
 pnpm run lint
 pnpm type-check
-pnpm test:coverage
