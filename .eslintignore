@@ -1,0 +1,5 @@
+*.cjs
+dist/*
+dist-doc/*
+node_modules/*
+script/*

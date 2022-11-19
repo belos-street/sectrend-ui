@@ -1,0 +1,21 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ],
+  "compilerOptions": {
+    "declaration": true, /* 生成相关的 '.d.ts' 文件。 */
+    "declarationDir": "dist/types", /* '.d.ts' 文件输出目录 */
+    "jsx": "preserve",
+},
+"esModuleInterop": true,
+"allowSyntheticDefaultImports": "true"
+}
