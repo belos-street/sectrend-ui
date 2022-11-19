@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import SButton from '@/button'
+import { Button as SButton } from './button'
 
 export { SButton }
 

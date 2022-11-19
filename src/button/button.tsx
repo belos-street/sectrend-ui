@@ -1,15 +1,9 @@
-import { defineComponent, type PropType } from 'vue'
-
-export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink'
+import { defineComponent } from 'vue'
+import { buttonProps } from './props'
 
 export default defineComponent({
   name: 'SButton',
-  props: {
-    color: {
-      type: String as PropType<IColor>,
-      default: 'blue'
-    }
-  },
+  props: buttonProps,
   setup(props, { slots }) {
     return () => <button style={{ color: props.color }}>{slots.default && slots.default()}</button>
   }

@@ -8,6 +8,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
+//juejin.cn/book/7117582869358182403/section/7129420343587897385
 
 export default defineConfig({
   test: {
@@ -41,18 +42,21 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['vue', 'vue-router'],
+      external: ['vue'],
       output: {
         globals: {
           vue: 'Vue'
         }
       }
     },
-    minify: false,
+    minify: 'esbuild', //代码混淆 boolean | 'terser' | 'esbuild'
+    sourcemap: true, // 输出单独 source文件
+    reportCompressedSize: true, // 生成压缩大小报告
+    cssCodeSplit: true,
     lib: {
       entry: './src/entry.ts',
       name: 'SectrendUI',
-      fileName: 'sectrend-ui',
+      fileName: (format) => `sectrend-ui.${format}.js`,
       formats: ['es'] //导出模块格式 'umd', 'iife'
     }
   }
