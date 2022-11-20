@@ -40,7 +40,8 @@ release：发布新版本；
 workflow：工作流相关文件修改。
 
 exp：
-git commit -am 'ci: change husky conf'
+git add .
+git commit -m 'ci: change husky conf'
 # 示例1
 fix(global):修复checkbox不能复选的问题
 # 示例2 下面圆括号里的 common 为通用管理的名称
