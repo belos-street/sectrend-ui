@@ -1,17 +1,21 @@
 {
   "name": "sectrend-ui",
-  "version": "0.0.22",
+  "version": "0.0.26",
   "license": "MIT",
+  "main": "sectrend-ui.es.js",
   "scripts": {
     "dev": "vite",
-    "build-packages": "run-p type-check build-only",
+    "build-npm-packages": "pnpm zx scripts/npm-pack-build.mjs",
     "build-doc": "vue-tsc --noEmit && vite build --config ./vite.doc.config.ts",
     "preview": "vite preview --open",
     "test:unit-hmr": "vitest --environment jsdom",
     "test:coverage": "vitest run --coverage",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "publish": "pnpm zx scripts/publish-pack.mjs",
+    "git-push": "pnpm zx scripts/git-push.mjs",
+    "build-packages": "run-p type-check build-only"
   },
   "dependencies": {
     "highlight.js": "^11.6.0",
@@ -47,5 +51,9 @@
     "vue-tsc": "^0.40.7",
     "zx": "^7.1.1"
   },
-  "types": "sectrend-ui.d.ts"
+  "types": "sectrend-ui.d.ts",
+  "homepage": "https://github.com/aa1213889/sectrend-ui",
+  "bugs": {
+    "email": "869135421@qq.com"
+  }
 }

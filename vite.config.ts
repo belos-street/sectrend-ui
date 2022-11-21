@@ -19,7 +19,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
     dts({
-      outputDir: './dist/types',
+      outputDir: './dist',
       insertTypesEntry: false, // 插入TS 入口
       copyDtsFiles: true // 是否将源码里的 .d.ts 文件复制到 outputDir
     })
