@@ -4,8 +4,10 @@ import About from './views/AboutView.vue?raw'
 
 <template>
   <h1>jdgs778</h1>
-  <s-button color="blue">778 999</s-button>
-  我是猪8484
+  <div>
+    <s-button color="blue">778 999</s-button>
+    <SButton color="black">778 999</SButton>
+  </div>
 
   <pre>{{ About }}</pre>
 </template>

@@ -25,7 +25,7 @@ describe('button test', () => {
 
   it('mount props color', () => {
     const wrapper = mount(button, {
-      props: { color: 'red' } //传入插槽
+      props: { color: 'red' }
     })
 
     expect(wrapper.attributes().style).toContain('color: red')
