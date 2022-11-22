@@ -3,75 +3,26 @@ import About from './views/AboutView.vue?raw'
 </script>
 
 <template>
-  <h1>jdgs778</h1>
-  <div>
-    <s-button color="blue">778 999</s-button>
-    <SButton color="black">778 999</SButton>
+  <h1>Sectrend UI</h1>
+  <div class="container">
+    <div class="container-—item">button</div>
+    <div class="container-—item">tag</div>
   </div>
 
-  <pre>{{ About }}</pre>
+  <router-view></router-view>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+h1 {
+  margin: 0;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.container-—item {
+  margin: 10px 0;
+  cursor: pointer;
 }
 </style>

@@ -5,5 +5,6 @@ export default SectrendUI
 declare module 'vue' {
   export interface GlobalComponents {
     SButton: typeof import('./src/entry')['SButton']
+    STag: typeof import('./src/entry')['STag']
   }
 }

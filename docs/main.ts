@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import App from './index.vue'
 import router from './router'
 
-import './assets/main.css'
+// import './assets/main.css'
 import SUI from '../src/entry' //引用方式1 全局引用
 // import { SButton } from '../src/entry' //引用方式2 按需加载
 
