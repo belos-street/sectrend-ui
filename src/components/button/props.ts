@@ -1,9 +1,10 @@
 import type { PropType, ExtractPropTypes } from 'vue'
-import type { ButtonPropsType } from './type'
+import type { ButtonPropsType, ButtonPropsSize } from './type'
 
 const types = Object.freeze<ButtonPropsType[]>(['default', 'info', 'success', 'warn', 'danger'])
-
+const sizes = Object.freeze<ButtonPropsSize[]>(['default', 'small', 'large'])
 export const validatorType = (value: ButtonPropsType) => types.includes(value)
+export const validatorSize = (value: ButtonPropsSize) => sizes.includes(value)
 
 export const buttonProps = {
   type: {
@@ -13,7 +14,14 @@ export const buttonProps = {
   },
   text: Boolean,
   disabled: Boolean,
-  loading: Boolean
+  loading: Boolean,
+  round: Boolean,
+  circle: Boolean,
+  size: {
+    type: String as PropType<ButtonPropsSize>,
+    default: 'default',
+    validator: validatorSize
+  }
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

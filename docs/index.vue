@@ -1,17 +1,27 @@
 <script setup lang="ts">
-import About from './views/AboutView.vue?raw'
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 
+const { push } = useRouter()
+const mode = ref('day')
 const checkMode = () => {
-  document.getElementsByTagName('html')[0].className = 's-theme__dark'
+  if (mode.value === 'day') {
+    document.getElementsByTagName('html')[0].className = 's-theme__dark'
+    mode.value = 'night'
+  } else {
+    document.getElementsByTagName('html')[0].className = ''
+    mode.value = 'day'
+  }
 }
 </script>
 
 <template>
   <h1>Sectrend UI</h1>
-  <button @click="checkMode">night</button>
+  <button @click="checkMode">{{ mode }}</button>
   <div class="container">
-    <div class="container-—item">button</div>
-    <div class="container-—item">tag</div>
+    <div class="container-—item" @click="push('/document/button')">button</div>
+    <div class="container-—item" @click="push('/document/icon')">icon</div>
+    <div class="container-—item" @click="push('/document/tag')">tag</div>
   </div>
 
   <router-view></router-view>
