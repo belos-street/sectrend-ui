@@ -1,14 +1,19 @@
 import type { PropType, ExtractPropTypes } from 'vue'
-import type { ButtonColor } from './type'
+import type { ButtonPropsType } from './type'
 
-const colors = Object.freeze<ButtonColor[]>(['black', 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'purple', 'pink'])
+const types = Object.freeze<ButtonPropsType[]>(['default', 'info', 'success', 'warn', 'danger'])
+
+export const validatorType = (value: ButtonPropsType) => types.includes(value)
 
 export const buttonProps = {
-  color: {
-    type: String as PropType<ButtonColor>,
-    default: 'blue',
-    validator: (value: ButtonColor) => colors.includes(value)
-  }
+  type: {
+    type: String as PropType<ButtonPropsType>,
+    default: 'default',
+    validator: validatorType
+  },
+  text: Boolean,
+  disabled: Boolean,
+  loading: Boolean
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

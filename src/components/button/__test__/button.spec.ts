@@ -10,7 +10,7 @@ import { describe, expect, it } from 'vitest'
  *
  * wrapper.classes() 获取dom的所有class
  * wrapper.text() 获取dom文本内容
- * wrapper.attributes() 获取dom的属性
+ * wrapper.attributes().style 获取dom的属性
  */
 describe('button test', () => {
   it('mount default slots', () => {
@@ -23,11 +23,11 @@ describe('button test', () => {
     expect(wrapper.text()).toBe('Button Text')
   })
 
-  it('mount props color', () => {
+  it('mount props type', () => {
     const wrapper = mount(button, {
-      props: { color: 'red' }
+      props: { type: 'info' }
     })
-
-    expect(wrapper.attributes().style).toContain('color: red')
+    expect(wrapper.classes().toString()).toContain('s-button--type__info')
+    //expect(wrapper.attributes().style).toContain('color: red')
   })
 })

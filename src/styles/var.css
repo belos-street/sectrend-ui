@@ -1,0 +1,25 @@
+:root {
+  --s-color-theme: rgb(255, 255, 255);
+  --s-color-type-info: rgba(53, 154, 222, 1);
+  --s-color-type-success: rgba(66, 218, 142, 1);
+  --s-color-type-warn: rgba(255, 186, 40, 1);
+  --s-color-type-danger: rgba(236, 75, 75, 1);
+  --s-color-font: rgba(102, 102, 102, 1);
+  --s-color-font-white: rgb(255, 255, 255);
+  --s-color-font-black: rgb(0, 0, 0);
+
+  /** size */
+  --s-font-size: 14px;
+  --s-font-size-sub: 12px;
+  --s-font-size-large: 16px;
+
+  --s-radius: 3px;
+
+  /** transition */
+  --s-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  --s-cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+html.s-theme__dark {
+  --s-color-theme: #242424;
+}

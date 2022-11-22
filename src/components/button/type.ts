@@ -1,1 +1,1 @@
-export type ButtonColor = 'black' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'pink'
+export type ButtonPropsType = 'default' | 'info' | 'success' | 'warn' | 'danger'

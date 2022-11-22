@@ -1,0 +1,103 @@
+.s-button {
+  --s-button-padding: 8px;
+  --s-button-color-bg: rgb(244, 244, 245);
+  --s-button-color-font: var(--s-color-font);
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+  font-size: var(--s-font-size);
+  border-radius: var(--s-radius);
+  color: var(--s-button-color-font);
+  padding: var(--s-button-padding) calc(2 * var(--s-button-padding));
+  transition: var(--s-transition);
+  background-color: var(--s-button-color-bg);
+}
+
+.s-button span {
+  font-weight: 500;
+}
+
+.s-button:hover {
+  filter: brightness(90%);
+  transition: all 1s var(--s-cubic-bezier);
+}
+
+.s-button:active {
+  box-shadow: 0px 0px 3px 1px var(--s-button-color-bg);
+  transition: all 0.5s var(--s-cubic-bezier);
+}
+
+.s-button.s-button--type__info {
+  --s-button-color-font: var(--s-color-font-white);
+  --s-button-color-bg: var(--s-color-type-info);
+}
+
+.s-button.s-button--type__success {
+  --s-button-color-font: var(--s-color-font-white);
+  --s-button-color-bg: var(--s-color-type-success);
+}
+
+.s-button.s-button--type__warn {
+  --s-button-color-font: var(--s-color-font-white);
+  --s-button-color-bg: var(--s-color-type-warn);
+}
+
+.s-button.s-button--type__danger {
+  --s-button-color-font: var(--s-color-font-white);
+  --s-button-color-bg: var(--s-color-type-danger);
+}
+
+.s-theme__dark .s-button {
+  --s-button-color-font: var(--s-color-font-black);
+  filter: contrast(70%);
+}
+
+/** s-button--text */
+.s-button--text {
+  background-color: transparent;
+}
+
+.s-button--text.s-button:hover {
+  filter: brightness(80%);
+}
+
+.s-button--text.s-button:active {
+  filter: brightness(100%);
+  box-shadow: none;
+}
+
+.s-button--text.s-button--type__info {
+  --s-button-color-font: var(--s-color-type-info);
+}
+
+.s-button--text.s-button--type__success {
+  --s-button-color-font: var(--s-color-type-success);
+}
+
+.s-button--text.s-button--type__warn {
+  --s-button-color-font: var(--s-color-type-warn);
+}
+
+.s-button--text.s-button--type__danger {
+  --s-button-color-font: var(--s-color-type-danger);
+}
+
+.s-theme__dark .s-button--text.s-button--type__default {
+  --s-button-color-font: var(--s-color-font-white);
+}
+
+/** icon */
+.s-button--icon {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
