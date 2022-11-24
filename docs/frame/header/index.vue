@@ -19,23 +19,23 @@ const checkMode = () => {
   <h1>Sectrend UI</h1>
   <button @click="checkMode">{{ mode }}</button>
   <div class="container">
-    <div class="container-—item" @click="push('/document/button')">button</div>
-    <div class="container-—item" @click="push('/document/icon')">icon</div>
-    <div class="container-—item" @click="push('/document/tag')">tag</div>
+    <div class="container-—item" @click="push('/components/button')">button</div>
+    <div class="container-—item" @click="push('/components/icon')">icon</div>
+    <div class="container-—item" @click="push('/components/tag')">tag</div>
   </div>
-
-  <router-view></router-view>
 </template>
 
 <style scoped>
 h1 {
   margin: 0;
 }
+
 .container {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
+
 .container-—item {
   margin: 10px 0;
   cursor: pointer;

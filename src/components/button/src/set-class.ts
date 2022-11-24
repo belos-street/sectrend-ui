@@ -1,5 +1,5 @@
 import { _name } from '..'
-import { validatorType, type ButtonProps } from '../props'
+import { validatorType, type ButtonProps, validatorSize } from '../props'
 
 export const setClass = (props: ButtonProps) => {
   let classStr = _name
@@ -9,5 +9,6 @@ export const setClass = (props: ButtonProps) => {
   if (props.round) classStr += ` ${_name}--round`
   if (props.circle) classStr += ` ${_name}--circle`
   if (props.loading) classStr += ` ${_name}--loading`
+  if (validatorSize(props.size)) classStr += ` ${_name}--size__${props.size}`
   return classStr
 }

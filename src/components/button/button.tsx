@@ -1,5 +1,4 @@
 import { defineComponent } from 'vue'
-import { _name } from './index'
 import { buttonProps } from './props'
 import { setClass } from './src/set-class'
 import { Loading } from '../../icon'
@@ -16,12 +15,14 @@ export default defineComponent({
         disabled={props.disabled || props.loading}
         onClick={(evt: MouseEvent) => emit('click', evt)}>
         {props.loading && (
-          <i class={`${_name}--loading s-button--icon s-button--icon__loading`}>
-            <Loading />
-          </i>
+          <div>
+            <i class={`s-button--icon s-button--icon__loading`}>
+              <Loading />
+            </i>
+          </div>
         )}
         {!props.loading && slots.icon && <div class="s-button--icon">{slots.icon()}</div>}
-        <span>{slots.default && slots.default()}</span>
+        {(!props.loading || !props.circle) && <span>{slots.default && slots.default()}</span>}
       </button>
     )
   }

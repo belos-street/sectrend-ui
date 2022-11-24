@@ -9,8 +9,8 @@
   --s-color-font-black: rgb(0, 0, 0);
 
   /** size */
+  --s-font-size-small: 12px;
   --s-font-size: 14px;
-  --s-font-size-sub: 12px;
   --s-font-size-large: 16px;
 
   --s-radius: 3px;

@@ -4,9 +4,7 @@ import { Star, Setting, Refresh } from '../../../src/icon'
 import codeText from './index.vue?raw'
 
 const loading = ref(false)
-const ok = () => {
-  console.log(1)
-}
+const disabled = ref(false)
 </script>
 
 <template>
@@ -34,21 +32,23 @@ const ok = () => {
   <div class="c">
     <s-button type="danger">
       <template #icon>
-        <s-icon :icon="Star" :rotate="30" />
+        <s-icon :icon="Star" />
       </template>
-      Deafult
+      星星
     </s-button>
     <s-button type="info">
       <template #icon>
-        <s-icon> <Setting /> </s-icon>
+        <s-icon>
+          <Setting />
+        </s-icon>
       </template>
-      Info
+      Setting
     </s-button>
     <s-button type="success">
       <template #icon>
         <s-icon :icon="Refresh" spin />
       </template>
-      Success
+      Update
     </s-button>
   </div>
 
@@ -71,27 +71,46 @@ const ok = () => {
 
   <h4>加载中</h4>
   <div class="c">
-    <s-button type="success" @click="loading = !loading">click me</s-button>
-    <s-button type="info" :loading="loading" @click="ok()">Info</s-button>
+    <s-button @click="loading = !loading">click me</s-button>
+    <s-button type="success" :loading="loading">
+      Success
+      <template #icon>
+        <s-icon :icon="Star" />
+      </template>
+    </s-button>
     <s-button type="warn" circle :loading="loading">
       <template #icon>
         <s-icon :icon="Star" />
       </template>
     </s-button>
+    <s-button type="info" :loading="loading">Info</s-button>
+    <s-button type="danger" :loading="loading" round>Danger</s-button>
   </div>
 
   <h4>尺寸</h4>
   <div class="c">
-    <s-button type="success" size="small">Success</s-button>
-    <s-button type="warn">Warn</s-button>
-    <s-button type="danger" size="large">Danger</s-button>
+    <s-button type="success" size="small">SIZE</s-button>
+    <s-button type="warn">SIZE</s-button>
+    <s-button type="danger" size="large">SIZE</s-button>
+    <s-button type="success" size="small" circle>S</s-button>
+    <s-button type="warn" circle>S</s-button>
+    <s-button type="danger" size="large" circle>S</s-button>
+    <s-button type="success" size="small" round>SIZE</s-button>
+    <s-button type="warn" round>SIZE</s-button>
+    <s-button type="danger" size="large" round>SIZE</s-button>
   </div>
 
   <h4>禁用</h4>
   <div class="c">
-    <s-button disabled>Deafult</s-button>
-    <s-button type="info" text>Info</s-button>
-    <s-button type="success" circle>Success</s-button>
+    <s-button @click="disabled = !disabled">点我</s-button>
+    <s-button type="warn" :disabled="disabled">
+      <template #icon>
+        <s-icon :icon="Star" />
+      </template>
+      Warn
+    </s-button>
+    <s-button type="danger" circle :disabled="disabled">A</s-button>
+    <s-button type="info" text :disabled="disabled">Info</s-button>
   </div>
 
   <h3>code</h3>

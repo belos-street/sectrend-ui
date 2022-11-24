@@ -4,3 +4,9 @@
   padding: 1rem;
   font-weight: normal;
 }
+
+.c {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 30px;
+}

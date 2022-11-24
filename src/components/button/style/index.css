@@ -2,7 +2,7 @@
   --s-button-padding: 8px;
   --s-button-color-bg: rgb(244, 244, 245);
   --s-button-color-font: var(--s-color-font);
-  --s-button-height: 32px;
+  --s-button-height: 34px;
   --s-button-font-size: var(--s-font-size);
   cursor: pointer;
   text-align: center;
@@ -12,7 +12,7 @@
   user-select: none;
   white-space: nowrap;
   overflow: hidden;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   word-break: break-all;
@@ -28,6 +28,8 @@
 .s-button span {
   font-weight: 500;
   display: inline-flex;
+  font-size: inherit;
+  /* height: var(--s-button-font-size); */
 }
 
 .s-button:hover {
@@ -65,7 +67,12 @@
   filter: contrast(70%);
 }
 
-/** s-button--text */
+.s-theme__dark .s-button:hover {
+  filter: contrast(50%);
+  transition: all 1s var(--s-cubic-bezier);
+}
+
+/** text */
 .s-button--text {
   background-color: transparent;
 }
@@ -109,20 +116,6 @@
   margin-right: 0;
 }
 
-.s-button--circle.s-button--loading {
-  padding: 0;
-}
-
-.s-button--circle.s-button--loading .s-button--icon__loading {
-  font-size: var(--s-button-font-size);
-}
-
-.s-button--circle.s-button--loading span {
-  display: none;
-}
-
-
-
 /** round */
 .s-button--round {
   border-radius: var(--s-button-height);
@@ -141,20 +134,44 @@
 }
 
 .s-button--loading:active {
-  cursor: progress;
   box-shadow: none
 }
 
 .s-button--icon__loading {
   height: 1em;
   width: 1em;
-  line-height: 1em;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  fill: currentColor;
-  color: inherit;
-  font-size: var(--s-button-font-size);
   animation: s-icon-rotate-360 1s linear infinite;
+}
+
+/** disabled */
+.s-button--disabled.s-button {
+  --s-button-disabled-grayscale: grayscale(50%);
+  cursor: no-drop;
+  filter: var(--s-button-disabled-grayscale);
+}
+
+.s-button--disabled.s-button:active {
+  box-shadow: none
+}
+
+.s-button--disabled.s-button:hover {
+  filter: var(--s-button-disabled-grayscale);
+  transition: none;
+}
+
+/** size */
+.s-button--size__small {
+  --s-button-font-size: var(--s-font-size-small);
+  --s-button-height: 28px;
+  --s-button-padding: 6px;
+}
+
+.s-button--size__large {
+  --s-button-font-size: var(--s-font-size-large);
+  --s-button-height: 40px;
+  --s-button-padding: 10px;
+}
+
+.s-button--size__large span {
+  margin-top: 1px;
 }
