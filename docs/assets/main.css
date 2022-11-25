@@ -10,3 +10,8 @@
   gap: 8px;
   margin-bottom: 30px;
 }
+
+/** 支持样式自定义调整 */
+/* #app .s-divider {
+  --s-divider--border-type: dashed;
+} */

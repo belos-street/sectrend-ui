@@ -21,7 +21,14 @@ const checkMode = () => {
   <div class="container">
     <div class="container-—item" @click="push('/components/button')">button</div>
     <div class="container-—item" @click="push('/components/icon')">icon</div>
+    <div class="container-—item" @click="push('/components/divider')">divider</div>
+    <div class="container-—item" @click="push('/components/config-provider')">config-provider</div>
     <div class="container-—item" @click="push('/components/tag')">tag</div>
+    <div class="container-—item" @click="push('/components/space')">space</div>
+    <div class="container-—item" @click="push('/components/breadcrumb')">breadcrumb</div>
+
+    <div class="container-—item" @click="push('/components/breadcrumb')">Empty</div>
+    <div class="container-—item" @click="push('/components/breadcrumb')">抽屉</div>
   </div>
 </template>
 

@@ -7,5 +7,7 @@ declare module 'vue' {
     SButton: typeof import('./src/entry')['SButton']
     STag: typeof import('./src/entry')['STag']
     SIcon: typeof import('./src/entry')['SIcon']
+    SDivider: typeof import('./src/entry')['SDivider']
+    SConfigProvider: typeof import('./src/entry')['SConfigProvider']
   }
 }

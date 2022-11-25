@@ -22,4 +22,5 @@
 
 html.s-theme__dark {
   --s-color-theme: #242424;
+  --s-color-font: rgba(235, 235, 235, 0.64);
 }

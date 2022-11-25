@@ -1,0 +1,36 @@
+.s-divider {
+  --s-divider--border-type: solid;
+  --s-divider--color-front: var(--s-color-font);
+  --s-divider--color-border: rgba(0, 0, 0, .12);
+  --s-divider--size-font: var(--s-font-size);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--s-divider--color-front);
+  font-size: var(--s-divider--size-font);
+  line-height: 1.5715;
+  list-style: none;
+  border-top: 1px var(--s-divider--border-type) var(--s-divider--color-border);
+}
+
+.s-divider--dashed {
+  --s-divider--border-type: dashed
+}
+
+.s-divider--horizontal {
+  margin: 16px 0;
+}
+
+.s-divider--vertical {
+  display: inline-block;
+  height: 1em;
+  margin: 0 8px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px var(--s-divider--border-type) var(--s-divider--color-border);
+}
+
+.s-theme__dark .s-divider {
+  --s-divider--color-border: var(--s-color-font);
+  filter: opacity(40%)
+}

@@ -24,6 +24,16 @@ const router = createRouter({
           component: () => import('../components/icon/index.vue')
         },
         {
+          path: 'divider',
+          name: 'divider',
+          component: () => import('../components/divider/index.vue')
+        },
+        {
+          path: 'config-provider',
+          name: 'config-provider',
+          component: () => import('../components/config-provider/index.vue')
+        },
+        {
           path: 'tag',
           name: 'tag',
           component: () => import('../components/tag/index.vue')

@@ -11,6 +11,7 @@ import { describe, expect, it } from 'vitest'
  * wrapper.classes() 获取dom的所有class
  * wrapper.text() 获取dom文本内容
  * wrapper.attributes().style 获取dom的属性
+ *   expect(wrapper.attributes().style).toContain('color: red')
  */
 describe('button test', () => {
   it('mount default slots', () => {
@@ -28,6 +29,47 @@ describe('button test', () => {
       props: { type: 'info' }
     })
     expect(wrapper.classes().toString()).toContain('s-button--type__info')
-    //expect(wrapper.attributes().style).toContain('color: red')
+  })
+
+  it('mount props size', () => {
+    const wrapper = mount(button, {
+      props: { size: 'small' }
+    })
+    expect(wrapper.classes().toString()).toContain('s-button--size__small')
+  })
+
+  it('mount props round', () => {
+    const wrapper = mount(button, {
+      props: { round: true }
+    })
+    expect(wrapper.classes().toString()).toContain('s-button--round')
+  })
+
+  it('mount props circle', () => {
+    const wrapper = mount(button, {
+      props: { circle: true }
+    })
+    expect(wrapper.classes().toString()).toContain('s-button--circle')
+  })
+
+  it('mount props loading', () => {
+    const wrapper = mount(button, {
+      props: { loading: true }
+    })
+    expect(wrapper.classes().toString()).toContain('s-button--loading')
+  })
+
+  it('mount props text', () => {
+    const wrapper = mount(button, {
+      props: { text: true }
+    })
+    expect(wrapper.classes().toString()).toContain('s-button--text')
+  })
+
+  it('mount props disabled', () => {
+    const wrapper = mount(button, {
+      props: { disabled: true }
+    })
+    expect(wrapper.classes().toString()).toContain('s-button--disabled')
   })
 })

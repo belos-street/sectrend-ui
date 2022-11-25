@@ -1,5 +1,5 @@
 import { _name } from '..'
-import { validatorType, type ButtonProps, validatorSize } from '../props'
+import { validatorType, validatorSize, type ButtonProps } from '../props'
 
 export const setClass = (props: ButtonProps) => {
   let classStr = _name

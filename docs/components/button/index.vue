@@ -78,7 +78,7 @@ const disabled = ref(false)
         <s-icon :icon="Star" />
       </template>
     </s-button>
-    <s-button type="warn" circle :loading="loading">
+    <s-button type="warn" circle :loading="false">
       <template #icon>
         <s-icon :icon="Star" />
       </template>
