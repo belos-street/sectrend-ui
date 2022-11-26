@@ -4,10 +4,12 @@ import { Tag as STag } from './components/tag'
 import { Icon as SIcon } from './components/icon'
 import { Divider as SDivider } from './components/divider'
 import { ConfigProvider as SConfigProvider } from './components/config-provider'
+import { Space as SSpace } from './components/space'
 
 import './styles/sectrend-ui.css'
+export * from './locale'
 
-export { SButton, STag, SIcon, SDivider, SConfigProvider }
+export { SButton, STag, SIcon, SDivider, SConfigProvider, SSpace }
 
 export default {
   install(app: App) {
@@ -16,5 +18,6 @@ export default {
     app.component(SIcon.name, SIcon)
     app.component(SDivider.name, SDivider)
     app.component(SConfigProvider.name, SConfigProvider)
+    app.component(SSpace.name, SSpace)
   }
 }

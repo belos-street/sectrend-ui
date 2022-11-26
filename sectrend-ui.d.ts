@@ -9,5 +9,6 @@ declare module 'vue' {
     SIcon: typeof import('./src/entry')['SIcon']
     SDivider: typeof import('./src/entry')['SDivider']
     SConfigProvider: typeof import('./src/entry')['SConfigProvider']
+    SSpace: typeof import('./src/entry')['SSpace']
   }
 }

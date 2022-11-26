@@ -1,6 +1,7 @@
-/** 英文 - 英式 */
+import type { LocaleType } from '../type'
 
-const locale = {
+/** 英文 - 英式 */
+const locale: LocaleType = {
   name: 'en-GB',
   submit: 'Submit',
   cancel: 'Cancel',

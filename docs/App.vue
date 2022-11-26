@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { ConfigProviderTheme } from '@/components/config-provider/type'
 import { ref } from 'vue'
 import Header from './frame/header/index.vue'
-import zhCN from '@/locale/zh-CN'
-import enGB from '@/locale/en-GB'
+import { zhCN, enGB } from '@/locale'
 
-const theme = ref<ConfigProviderTheme>('light')
+const theme = ref('light')
 
 // setTimeout(() => {
 //   val.value = 'dark'
