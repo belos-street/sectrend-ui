@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Header from './frame/header/index.vue'
-import { zhCN, enGB } from '@/locale'
+import { zhCN } from '@/locale'
 
 const theme = ref('light')
 
@@ -12,7 +12,7 @@ const theme = ref('light')
 
 <template>
   <Header />
-  <s-config-provider :locale="enGB" :theme="theme">
+  <s-config-provider :locale="zhCN" :theme="theme">
     <router-view></router-view>
   </s-config-provider>
 </template>

@@ -15,7 +15,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "publish": "pnpm zx scripts/publish-pack.mjs",
     "git-push": "pnpm zx scripts/git-push.mjs",
-    "build-packages": "run-p type-check build-only"
+    "build-packages": "run-p type-check build-only",
+    "create-component": "zx scripts/create-component.mjs"
   },
   "dependencies": {
     "highlight.js": "^11.6.0",

@@ -1,5 +1,5 @@
 import type { PropType, ExtractPropTypes } from 'vue'
-import type { SpacePropsAlign, SpacePropsJustify, SpacePropsSize } from './type'
+import type { SpacePropsAlign, SpacePropsJustify } from './type'
 
 const justifys = Object.freeze<SpacePropsJustify[]>([
   'start',
