@@ -1,6 +1,6 @@
 await $`git add .`
 
-let commitText = await question(
+let commitType = await question(
 `请输入commit 的类型：
 --- ---
 feat：新功能、新特性；
@@ -18,8 +18,13 @@ release：发布新版本；
 workflow：工作流相关文件修改
 --- ---
 例如：
-ci: change husky conf
+feat
 `)
-await $`git commit -m ${commitText}`
+
+let commitText = await question(`请输入commit信息：`)
+
+const msg = `${commitType}: ${commitText}`
+console.log(msg)
+await $`git commit -m ${msg}`
 
 await $`git push`
