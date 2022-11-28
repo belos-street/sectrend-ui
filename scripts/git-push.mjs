@@ -20,11 +20,8 @@ workflow：工作流相关文件修改
 例如：
 feat
 `)
-
 let commitText = await question(`请输入commit信息：`)
-
 const msg = `${commitType}: ${commitText}`
-console.log(msg)
-await $`git commit -m ${msg}`
 
+await $`git commit -m ${msg}`
 await $`git push`

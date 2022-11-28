@@ -1,0 +1,64 @@
+.s-pop-container {
+  display: inline-block;
+}
+
+.s-pop-content {
+  position: absolute;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.s-pop-trigger--container {
+  display: inline-block;
+}
+
+.pop--active-enter-active,
+.pop--active-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.pop--active-enter-from,
+.pop--active-leave-to {
+  opacity: 0;
+}
+
+
+
+.s-pop--arrow {
+  width: 12px;
+  height: 8px;
+  background-color: red;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%)
+}
+
+.s-popover {
+  position: relative;
+}
+
+.s-popover-content {
+  opacity: 0.5;
+  background-color: aquamarine;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid red;
+  padding: 20px;
+}
+
+.s-pop--arrow__top {
+  transform: rotate(180deg);
+}
+
+.s-pop--arrow__left {
+  transform: rotate(90deg);
+}
+
+.s-pop--arrow__bottom {
+  transform: rotate(0deg);
+}
+
+.s-pop--arrow__right {
+  transform: rotate(270deg);
+}
+
+.s-pop--arrow__right {
+  transform: rotate(270deg);
+}

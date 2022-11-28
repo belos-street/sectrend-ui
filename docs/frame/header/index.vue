@@ -25,6 +25,9 @@ const checkMode = () => {
     <div class="container-—item" @click="push('/components/config-provider')">config-provider</div>
     <div class="container-—item" @click="push('/components/tag')">tag</div>
     <div class="container-—item" @click="push('/components/space')">space</div>
+    <div class="container-—item" @click="push('/components/popover')">popover</div>
+    <div class="container-—item" @click="push('/components/popconfirm')">popconfirm</div>
+    <div class="container-—item" @click="push('/components/dropdown')">dropdown</div>
     <div class="container-—item" @click="push('/components/breadcrumb')">breadcrumb</div>
 
     <div class="container-—item" @click="push('/components/breadcrumb')">Empty</div>

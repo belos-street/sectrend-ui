@@ -71,6 +71,8 @@ await fs.writeFile(
   `import { defineComponent } from 'vue'
 import { ${name}Props } from './props'
 import { setClass } from './src/set-class'
+import './style/index.css'
+
 export default defineComponent({
   name: 'S${capName}',
   props: ${name}Props,

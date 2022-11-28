@@ -19,6 +19,7 @@
     "create-component": "zx scripts/create-component.mjs"
   },
   "dependencies": {
+    "@vueuse/core": "^9.6.0",
     "highlight.js": "^11.6.0",
     "pinia": "^2.0.21",
     "vue": "^3.2.38",

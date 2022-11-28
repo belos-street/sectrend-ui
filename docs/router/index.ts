@@ -39,6 +39,21 @@ const router = createRouter({
           component: () => import('../components/space/index.vue')
         },
         {
+          path: 'popover',
+          name: 'popover',
+          component: () => import('../components/popover/index.vue')
+        },
+        // {
+        //   path: 'popconfirm',
+        //   name: 'popconfirm',
+        //   component: () => import('../components/popconfirm/index.vue')
+        // },
+        // {
+        //   path: 'dropdown',
+        //   name: 'dropdown',
+        //   component: () => import('../components/dropdown/index.vue')
+        // },
+        {
           path: 'tag',
           name: 'tag',
           component: () => import('../components/tag/index.vue')

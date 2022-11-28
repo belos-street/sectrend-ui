@@ -45,7 +45,7 @@ import codeText from './index.vue?raw'
 
   <h4>间隔大小</h4>
   <div class="b">
-    <s-space :size="8">
+    <s-space :size="[4, 2]">
       <s-button type="info">Sectrend</s-button>
       <s-button type="warn">Sectrend</s-button>
       <s-button type="danger">Sectrend</s-button>

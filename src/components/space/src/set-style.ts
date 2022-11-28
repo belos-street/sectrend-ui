@@ -8,7 +8,7 @@ const setPropsSize = (size: SpacePropsSize): string =>
 export const setStyle = (props: SpaceProps) => {
   const attr: StyleValue = {}
   props.justify && (attr.justifyContent = props.justify)
-  props.size && (attr.gap = setPropsSize(props.size as SpacePropsSize))
+  props.size && (attr.gap = setPropsSize(props.size))
   props.vertical && (attr.flexFlow = 'column')
   props.align && (attr.alignItems = props.align)
   !props.wrap && (attr.flexWrap = 'nowrap')

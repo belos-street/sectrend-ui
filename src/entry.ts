@@ -6,10 +6,12 @@ import { Divider as SDivider } from './components/divider'
 import { ConfigProvider as SConfigProvider } from './components/config-provider'
 import { Space as SSpace } from './components/space'
 
+import { PopContainer as SPopContainer } from './components/pop-container'
+
 import './styles/sectrend-ui.css'
 export * from './locale'
 
-export { SButton, STag, SIcon, SDivider, SConfigProvider, SSpace }
+export { SButton, STag, SIcon, SDivider, SConfigProvider, SSpace, SPopContainer }
 
 export default {
   install(app: App) {
@@ -19,5 +21,6 @@ export default {
     app.component(SDivider.name, SDivider)
     app.component(SConfigProvider.name, SConfigProvider)
     app.component(SSpace.name, SSpace)
+    app.component(SPopContainer.name, SPopContainer)
   }
 }

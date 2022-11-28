@@ -1,5 +1,5 @@
 import type { PropType, ExtractPropTypes } from 'vue'
-import type { SpacePropsAlign, SpacePropsJustify } from './type'
+import type { SpacePropsAlign, SpacePropsJustify, SpacePropsSize } from './type'
 
 const justifys = Object.freeze<SpacePropsJustify[]>([
   'start',
@@ -26,28 +26,9 @@ export const spaceProps = {
     deafult: undefined,
     validator: validatorAlign
   },
-
-  /**
-   * SpacePropsSize 不知道怎么绑定上PropType
-   */
   size: {
-    type: [Array, Number],
-    default: 8,
-    validator: (val: unknown) => {
-      if (Array.isArray(val)) {
-        if (val.length === 1 && typeof val[0] === 'number') {
-          return true
-        } else if (val.length === 2 && typeof val[0] === 'number' && typeof val[1] === 'number') {
-          return true
-        } else {
-          return false
-        }
-      } else if (typeof val === 'number') {
-        return true
-      } else {
-        return false
-      }
-    }
+    type: [Number, Array] as PropType<SpacePropsSize>,
+    default: 8
   },
   wrap: {
     default: true,
