@@ -11,5 +11,6 @@ declare module 'vue' {
     SConfigProvider: typeof import('./src/entry')['SConfigProvider']
     SSpace: typeof import('./src/entry')['SSpace']
     SPopContainer: typeof import('./src/entry')['SPopContainer']
+    SPopover: typeof import('./src/entry')['SPopover']
   }
 }

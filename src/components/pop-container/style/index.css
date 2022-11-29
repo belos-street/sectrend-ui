@@ -6,7 +6,6 @@
 
 .s-pop-content {
   position: absolute;
-  white-space: nowrap;
 }
 
 .s-pop-trigger--container {
@@ -34,7 +33,8 @@
 .s-pop-box--content {
   box-shadow: var(--s-box-shadow);
   border-radius: var(--s-radius);
-
+  /* word-break: normal; */
+  white-space: nowrap;
 }
 
 .s-pop-box__no__raw {

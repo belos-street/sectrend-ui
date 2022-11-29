@@ -6,15 +6,30 @@ import codeText from './index.vue?raw'
   <h3>Popover</h3>
 
   <h4>基础使用</h4>
+  <div class="b">
+    <s-popover>
+      hello
+      <template #trigger>
+        <s-button type="info">hover me</s-button>
+      </template>
+    </s-popover>
+  </div>
 
+  <h4>触发方式</h4>
   <div class="b">
     <s-space>
-      <s-pop-container placement="top">
-        aaa
+      <s-popover>
+        hover
         <template #trigger>
           <s-button type="warn">hover me</s-button>
         </template>
-      </s-pop-container>
+      </s-popover>
+      <s-popover trigger="click">
+        click
+        <template #trigger>
+          <s-button type="danger">click me</s-button>
+        </template>
+      </s-popover>
     </s-space>
   </div>
 
@@ -22,117 +37,116 @@ import codeText from './index.vue?raw'
   <div class="b">
     <div class="parent">
       <div class="div1">
-        <s-pop-container placement="top-start" trigger="click">
-          <s-pop-container placement="top-start" trigger="click">
-            top-start2222222
-            <template #trigger>
-              <s-button>top-start2</s-button>
-            </template>
-          </s-pop-container>
+        <s-popover placement="top-start">
+          top-start
           <template #trigger>
             <s-button>top-start</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div2">
-        <s-pop-container placement="top" :show-arrow="false">
+        <s-popover placement="top">
           top
           <template #trigger>
             <s-button>top</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div3">
-        <s-pop-container placement="top-end" trigger="click">
-          <div class="z7">top-end2222top-end2222top-end2222</div>
+        <s-popover placement="top-end">
+          换行测试: end2end222end2end
           <template #trigger>
             <s-button>top-end</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div4">
-        <s-pop-container placement="right-start">
+        <s-popover placement="right-start">
           right-start
           <template #trigger>
             <s-button>right-start</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div5">
-        <s-pop-container placement="right">
+        <s-popover placement="right">
           right
           <template #trigger>
             <s-button>right</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div6">
-        <s-pop-container placement="right-end">
+        <s-popover placement="right-end">
           right-end
           <template #trigger>
             <s-button>right-end</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div7">
-        <s-pop-container placement="bottom-end">
+        <s-popover placement="bottom-end">
           bottom-end
           <template #trigger>
             <s-button>bottom-end</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div8">
-        <s-pop-container placement="bottom">
+        <s-popover placement="bottom">
           bottom
           <template #trigger>
             <s-button>bottom</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div9">
-        <s-pop-container placement="bottom-start">
+        <s-popover placement="bottom-start">
           bottom-start
           <template #trigger>
             <s-button>bottom-start</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div10">
-        <s-pop-container placement="left-end">
+        <s-popover placement="left-end">
           left-end
           <template #trigger>
             <s-button>left-end</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div11">
-        <s-pop-container placement="left">
+        <s-popover placement="left">
           left
           <template #trigger>
             <s-button>left</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
       <div class="div12">
-        <s-pop-container placement="left-start">
+        <s-popover placement="left-start">
           left-start
           <template #trigger>
             <s-button>left-start</s-button>
           </template>
-        </s-pop-container>
+        </s-popover>
       </div>
     </div>
   </div>
 
   <h4>隐藏箭头</h4>
   <div class="b">
-    <s-pop-container placement="bottom" :show-arrow="false">
-      top
+    <s-popover placement="bottom" :show-arrow="false" trigger="click">
+      <div class="Dropdown">
+        <div>Dropdown</div>
+        <div>Dropdown</div>
+      </div>
+
       <template #trigger>
-        <s-button>top</s-button>
+        <s-button type="success">top</s-button>
       </template>
-    </s-pop-container>
+    </s-popover>
   </div>
 
   <h3>code</h3>

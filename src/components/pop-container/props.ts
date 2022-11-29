@@ -1,5 +1,5 @@
 import type { PropType, ExtractPropTypes } from 'vue'
-import type { PopContainerPropsPlacement, PopContainerPropsTrigger } from './type'
+import type { PopContainerPropsPlacement, PopContainerPropsTrigger, PopSubFlag } from './type'
 export const popContainerProps = {
   raw: Boolean,
   showArrow: {
@@ -13,6 +13,10 @@ export const popContainerProps = {
   placement: {
     type: String as PropType<PopContainerPropsPlacement>,
     default: 'top'
+  },
+  flag: {
+    type: String as PropType<PopSubFlag>,
+    default: 'popover'
   }
 }
 

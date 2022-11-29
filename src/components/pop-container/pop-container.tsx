@@ -3,6 +3,7 @@ import { popContainerProps } from './props'
 import './style/index.css'
 import { useElementHover, onClickOutside } from '@vueuse/core'
 import type { PopContainerPropsPlacement } from './type'
+import { overflowDetection } from './src/overflow-detection'
 
 export default defineComponent({
   name: 'SPopContainer',
@@ -35,7 +36,7 @@ export default defineComponent({
       })
     }
 
-    onClickOutside(popRef, (event) => {
+    onClickOutside(popRef, () => {
       if (props.trigger !== 'click') return
       popShowFlag.value = false
     })
@@ -60,6 +61,22 @@ export default defineComponent({
       const clientHeight = popContentRef.value!.clientHeight
       const popWidth = popRef.value!.clientWidth
       const popHeight = popRef.value!.clientHeight
+
+      /**
+       * 溢出检测 --- 未完成 ---
+       * 溢出取值：
+       *  1.s-pop-content + 偏远量(popTranslate.value) = s-pop-box
+       *  2. 根据s-pop-box距离浏览器的相对位置 和 浏览器的宽高来计算是否溢出
+       *  3. 若溢出 取对立值
+       *
+       * 对立值 - 首位
+       *  top-> bootm
+       *  bottom-> top
+       *  left -> right
+       *  right -> left
+       * exp: top-start -> bottom-start
+       * placement = overflowDetection(placement,clientWidth,clientHeight,popWidth)
+       */
 
       if (placement === 'top-start') {
         popTranslate.value = `translateY(${-100}%)`
@@ -142,8 +159,8 @@ export default defineComponent({
           <Transition name="pop--active">
             {popShowFlag.value && (
               <div class="s-pop-box" style={`${popBoxFlex.value} transform: ${popTranslate.value}`}>
-                <div class={`s-pop--arrow ${popArrow.value} ${!props.showArrow && 's-pop--arrow__none'}`} />
-                <div class={`s-pop-box--content ${!props.raw && 's-pop-box__no__raw'}`}>
+                <div class={`s-pop--arrow ${popArrow.value} ${props.showArrow ? '' : 's-pop--arrow__none'}`} />
+                <div class={`s-pop-box--content ${props.raw ? '' : 's-pop-box__no__raw'}`}>
                   {slots.default && slots.default()}
                 </div>
               </div>
