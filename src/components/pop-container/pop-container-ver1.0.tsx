@@ -1,3 +1,7 @@
+/**
+ * 讣告 - 放弃了 <Teleport to="body"> 方案
+ * @date 20221129
+ */
 import { defineComponent, Teleport, ref, watch, Transition } from 'vue'
 import { popContainerProps } from './props'
 import './style/index.css'

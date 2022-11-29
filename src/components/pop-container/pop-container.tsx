@@ -1,20 +1,28 @@
-import { defineComponent, ref, Transition, watch, nextTick } from 'vue'
+import { defineComponent, ref, Transition, watch, nextTick, onMounted } from 'vue'
 import { popContainerProps } from './props'
 import './style/index.css'
-import { useElementHover } from '@vueuse/core'
-import type { PopArrow, PopContainerPropsPlacement } from './type'
-import { n } from 'vitest/dist/index-6e18a03a'
+import { useElementHover, onClickOutside } from '@vueuse/core'
+import type { PopContainerPropsPlacement } from './type'
 
 export default defineComponent({
   name: 'SPopContainer',
   props: popContainerProps,
   setup(props, { slots }) {
+    /**
+     * @popRef s-pop-container的dom元素
+     * @popTranslate s-pop-box的translate距离
+     * @isHovered 监听s-pop-container是否hover
+     * @popContentRef s-pop-content的dom元素
+     * @popShowFlag 控制pop隐藏显示
+     */
     const popRef = ref<HTMLElement | null>(null)
-    const isHovered = useElementHover(popRef)
-    const popShowFlag = ref<boolean>(false)
     const popTranslate = ref('')
+    const isHovered = useElementHover(popRef)
     const popContentRef = ref<HTMLElement | null>(null)
-    const popArrow = ref<PopArrow>('top')
+    const popShowFlag = ref<boolean>(false)
+
+    const popArrow = ref('')
+    const popBoxFlex = ref('')
 
     /**
      * 处理Trigger的click事件
@@ -27,8 +35,25 @@ export default defineComponent({
       })
     }
 
+    onClickOutside(popRef, (event) => {
+      if (props.trigger !== 'click') return
+      popShowFlag.value = false
+    })
+
     /**
-     * placement位置计算处理和三角型
+     * 监听isHovered 为popShowFlag赋值
+     */
+    watch(isHovered, (newVal) => {
+      if (props.trigger !== 'hover') return
+      popShowFlag.value = newVal
+      if (!newVal) return
+      nextTick(() => {
+        setPopPlacement(props.placement)
+      })
+    })
+
+    /**
+     * placement位置计算处理
      */
     function setPopPlacement(placement: PopContainerPropsPlacement) {
       const clientWidth = popContentRef.value!.clientWidth
@@ -38,52 +63,77 @@ export default defineComponent({
 
       if (placement === 'top-start') {
         popTranslate.value = `translateY(${-100}%)`
-        popArrow.value = 'top'
       } else if (placement === 'top') {
-        popTranslate.value = `translateY(${-100}%) translateX(${(popWidth - clientWidth) / 2}px)`
-        popArrow.value = 'top'
+        popTranslate.value = `translateY(${-100}%) translateX(${(popWidth - clientWidth) / 2}px);`
       } else if (placement === 'top-end') {
-        console.log(popWidth - clientWidth)
         popTranslate.value = `translateY(${-100}%) translateX(${popWidth - clientWidth}px)`
-        popArrow.value = 'top'
       } else if (placement === 'right-start') {
         popTranslate.value = `translateX(${popWidth}px)`
-        popArrow.value = 'right'
       } else if (placement === 'right') {
         popTranslate.value = `translateX(${popWidth}px) translateY(${(popHeight - clientHeight) / 2}px)`
-        popArrow.value = 'right'
       } else if (placement === 'right-end') {
         popTranslate.value = `translateX(${popWidth}px) translateY(${popHeight - clientHeight}px)`
-        popArrow.value = 'right'
       } else if (placement === 'bottom-end') {
         popTranslate.value = `translateY(${popHeight}px) translateX(${popWidth - clientWidth}px)`
-        popArrow.value = 'bottom'
       } else if (placement === 'bottom') {
         popTranslate.value = `translateY(${popHeight}px) translateX(${(popWidth - clientWidth) / 2}px)`
-        popArrow.value = 'bottom'
       } else if (placement === 'bottom-start') {
         popTranslate.value = `translateY(${popHeight}px)`
-        popArrow.value = 'bottom'
       } else if (placement === 'left-end') {
         popTranslate.value = `translateX(${-100}%)  translateY(${popHeight - clientHeight}px)`
-        popArrow.value = 'left'
       } else if (placement === 'left') {
         popTranslate.value = `translateX(${-100}%) translateY(${(popHeight - clientHeight) / 2}px)`
-        popArrow.value = 'left'
       } else if (placement === 'left-start') {
         popTranslate.value = `translateX(${-100}%)`
-        popArrow.value = 'left'
       }
     }
 
-    watch(isHovered, (newVal) => {
-      if (props.trigger !== 'hover') return
-      popShowFlag.value = newVal
+    /**
+     * 处理三角形位置和s-pop-box
+     */
+    function setPopArrow() {
+      const placement = props.placement
+      if (placement === 'top-start') {
+        popBoxFlex.value = `flex-direction: column-reverse;`
+        popArrow.value = 's-pop--arrow__top__start'
+      } else if (placement === 'top') {
+        popBoxFlex.value = `flex-direction: column-reverse; align-items: center;`
+        popArrow.value = 's-pop--arrow__top'
+      } else if (placement === 'top-end') {
+        popBoxFlex.value = 'flex-direction: column-reverse; align-items: flex-end;'
+        popArrow.value = 's-pop--arrow__top__end'
+      } else if (placement === 'right-start') {
+        popBoxFlex.value = ''
+        popArrow.value = 's-pop--arrow__right__start'
+      } else if (placement === 'right') {
+        popBoxFlex.value = 'align-items: center;'
+        popArrow.value = 's-pop--arrow__right'
+      } else if (placement === 'right-end') {
+        popBoxFlex.value = 'align-items: flex-end;'
+        popArrow.value = 's-pop--arrow__right__end'
+      } else if (placement === 'bottom-end') {
+        popBoxFlex.value = 'flex-direction: column; align-items: flex-end;'
+        popArrow.value = 's-pop--arrow__bottom__end'
+      } else if (placement === 'bottom') {
+        popBoxFlex.value = 'flex-direction: column; align-items: center;'
+        popArrow.value = 's-pop--arrow__bottom'
+      } else if (placement === 'bottom-start') {
+        popBoxFlex.value = 'flex-direction: column;'
+        popArrow.value = 's-pop--arrow__bottom__start'
+      } else if (placement === 'left-end') {
+        popBoxFlex.value = 'flex-flow: row-reverse; align-items: flex-end;'
+        popArrow.value = 's-pop--arrow__left__end'
+      } else if (placement === 'left') {
+        popBoxFlex.value = 'flex-flow: row-reverse; align-items: center;'
+        popArrow.value = 's-pop--arrow__left'
+      } else if (placement === 'left-start') {
+        popBoxFlex.value = 'flex-flow: row-reverse;'
+        popArrow.value = 's-pop--arrow__left__start'
+      }
+    }
 
-      if (!newVal) return
-      nextTick(() => {
-        setPopPlacement(props.placement)
-      })
+    onMounted(() => {
+      setPopArrow()
     })
 
     return () => (
@@ -91,9 +141,11 @@ export default defineComponent({
         <div class="s-pop-content" ref={popContentRef}>
           <Transition name="pop--active">
             {popShowFlag.value && (
-              <div class="s-popover" style={`transform: ${popTranslate.value}`}>
-                {props.showArrow && <div class={`s-pop--arrow s-pop--arrow__${popArrow.value}`} />}
-                <div class="s-popover-content">{slots.default && slots.default()}</div>
+              <div class="s-pop-box" style={`${popBoxFlex.value} transform: ${popTranslate.value}`}>
+                <div class={`s-pop--arrow ${popArrow.value} ${!props.showArrow && 's-pop--arrow__none'}`} />
+                <div class={`s-pop-box--content ${!props.raw && 's-pop-box__no__raw'}`}>
+                  {slots.default && slots.default()}
+                </div>
               </div>
             )}
           </Transition>

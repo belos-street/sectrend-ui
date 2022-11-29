@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useElementHover } from '@vueuse/core'
+import { useElementHover, onClickOutside } from '@vueuse/core'
 
 const myHoverableElement = ref(null)
 const isHovered = useElementHover(myHoverableElement)

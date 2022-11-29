@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import codeText from './index.vue?raw'
-import test from './test.vue'
 </script>
 
 <template>
@@ -10,16 +9,10 @@ import test from './test.vue'
 
   <div class="b">
     <s-space>
-      <s-pop-container placement="top-start">
-        hhhhhhhhhhhhhhhhhhhhh
+      <s-pop-container placement="top">
+        aaa
         <template #trigger>
           <s-button type="warn">hover me</s-button>
-        </template>
-      </s-pop-container>
-      <s-pop-container trigger="click">
-        click me
-        <template #trigger>
-          <s-button>clickcliccccccccccck</s-button>
         </template>
       </s-pop-container>
     </s-space>
@@ -29,8 +22,8 @@ import test from './test.vue'
   <div class="b">
     <div class="parent">
       <div class="div1">
-        <s-pop-container placement="top-start">
-          <s-pop-container placement="top-start">
+        <s-pop-container placement="top-start" trigger="click">
+          <s-pop-container placement="top-start" trigger="click">
             top-start2222222
             <template #trigger>
               <s-button>top-start2</s-button>
@@ -42,7 +35,7 @@ import test from './test.vue'
         </s-pop-container>
       </div>
       <div class="div2">
-        <s-pop-container placement="top">
+        <s-pop-container placement="top" :show-arrow="false">
           top
           <template #trigger>
             <s-button>top</s-button>
@@ -50,8 +43,8 @@ import test from './test.vue'
         </s-pop-container>
       </div>
       <div class="div3">
-        <s-pop-container placement="top-end">
-          top-end2222top-end2222top-end2222
+        <s-pop-container placement="top-end" trigger="click">
+          <div class="z7">top-end2222top-end2222top-end2222</div>
           <template #trigger>
             <s-button>top-end</s-button>
           </template>
@@ -130,6 +123,16 @@ import test from './test.vue'
         </s-pop-container>
       </div>
     </div>
+  </div>
+
+  <h4>隐藏箭头</h4>
+  <div class="b">
+    <s-pop-container placement="bottom" :show-arrow="false">
+      top
+      <template #trigger>
+        <s-button>top</s-button>
+      </template>
+    </s-pop-container>
   </div>
 
   <h3>code</h3>
