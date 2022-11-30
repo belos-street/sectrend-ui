@@ -149,6 +149,16 @@ import codeText from './index.vue?raw'
     </s-popover>
   </div>
 
+  <h4>控制隐藏显示</h4>
+  <div class="b">
+    <s-popover :show="true" placement="bottom">
+      控制隐藏显示
+      <template #trigger>
+        <s-button type="info">hover me</s-button>
+      </template>
+    </s-popover>
+  </div>
+
   <h3>code</h3>
   <hr />
 

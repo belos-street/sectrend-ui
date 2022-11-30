@@ -1,12 +1,12 @@
 <script setup lang="ts">
-//import { ref } from 'vue'
+import { ref } from 'vue'
 import codeText from './index.vue?raw'
 import { Star } from '../../../src/icon'
-// const text = ref('233')
+const isShow = ref(false)
 
-// setTimeout(() => {
-//   text.value = '778'
-// }, 3000)
+setTimeout(() => {
+  isShow.value = true
+}, 6000)
 
 const handCancelClick = (value: any) => {
   console.log(value)
@@ -116,6 +116,16 @@ const handleConfirmClick = (value: any) => {
     </s-popconfirm>
   </div>
 
+  <h4>test</h4>
+  <s-popconfirm placement="top-start" v-model:show="isShow">
+    dangerdangerdanger - {{ isShow }}
+    <template #action>
+      <s-button type="success" text>Success</s-button>
+    </template>
+    <template #trigger>
+      <s-button type="danger">danger操作</s-button>
+    </template>
+  </s-popconfirm>
   <h4>触发方式</h4>
   <div class="b">同popover</div>
 

@@ -8,7 +8,8 @@ import type { PopContainerPropsPlacement } from './type'
 export default defineComponent({
   name: 'SPopContainer',
   props: popContainerProps,
-  setup(props, { slots }) {
+  emits: ['update:show'],
+  setup(props, { slots, emit }) {
     /**
      * @popRef s-pop-container的dom元素
      * @popTranslate s-pop-box的translate距离
@@ -24,6 +25,13 @@ export default defineComponent({
 
     const popArrow = ref('')
     const popBoxFlex = ref('')
+
+    watch(
+      () => props.show,
+      () => {
+        emit('update:show', popShowFlag.value)
+      }
+    )
 
     /**
      * 处理Trigger的click事件
@@ -149,15 +157,24 @@ export default defineComponent({
       }
     }
 
+    const isMounted = ref(false)
     onMounted(() => {
+      isMounted.value = true
       setPopArrow()
+
+      /** 初始化为true的时候 */
+      nextTick(() => {
+        if (props.show) {
+          setPopPlacement(props.placement)
+        }
+      })
     })
 
     return () => (
       <div class="s-pop-container" ref={popRef}>
         <div class="s-pop-content" ref={popContentRef}>
           <Transition name="pop--active">
-            {popShowFlag.value && (
+            {popShowFlag.value && isMounted.value && (
               <div class="s-pop-box" style={`${popBoxFlex.value} transform: ${popTranslate.value}`}>
                 <div class={`s-pop--arrow ${popArrow.value} ${props.showArrow ? '' : 's-pop--arrow__none'}`} />
                 <div class={`${props.name} s-pop-box--content ${props.raw ? '' : 's-pop-box__no__raw'}`}>

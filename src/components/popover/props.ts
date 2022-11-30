@@ -13,7 +13,8 @@ export const popoverProps = {
   placement: {
     type: String as PropType<PopContainerPropsPlacement>,
     default: 'top'
-  }
+  },
+  show: Boolean
 }
 
 export type PopoverProps = ExtractPropTypes<typeof popoverProps>
