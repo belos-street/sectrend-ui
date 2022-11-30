@@ -14,4 +14,4 @@ export type PopContainerPropsPlacement =
   | 'left-end'
 
 export type PopArrow = 'top' | 'right' | 'bottom' | 'left'
-export type PopSubFlag = 'popover' | 'popconfirm' | 'dropdown'
+export type PopSubFlag = 's-popover' | 's-popconfirm' | 's-dropdown'

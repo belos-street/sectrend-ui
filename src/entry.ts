@@ -6,13 +6,14 @@ import { Divider as SDivider } from './components/divider'
 import { ConfigProvider as SConfigProvider } from './components/config-provider'
 import { Space as SSpace } from './components/space'
 import { Popover as SPopover } from './components/popover'
+import { Popconfirm as SPopconfirm } from './components/popconfirm'
 
 import { PopContainer as SPopContainer } from './components/pop-container'
 
 import './styles/sectrend-ui.css'
 export * from './locale'
 
-export { SButton, STag, SIcon, SDivider, SConfigProvider, SSpace, SPopContainer, SPopover }
+export { SButton, STag, SIcon, SDivider, SConfigProvider, SSpace, SPopContainer, SPopover, SPopconfirm }
 
 export default {
   install(app: App) {
@@ -24,5 +25,6 @@ export default {
     app.component(SSpace.name, SSpace)
     app.component(SPopContainer.name, SPopContainer)
     app.component(SPopover.name, SPopover)
+    app.component(SPopconfirm.name, SPopconfirm)
   }
 }

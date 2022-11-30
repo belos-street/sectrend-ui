@@ -2,6 +2,7 @@ import { defineComponent } from 'vue'
 import { popoverProps } from './props'
 
 import popContainer from '../pop-container/pop-container'
+import { _name } from '.'
 
 export default defineComponent({
   name: 'SPopover',
@@ -11,13 +12,14 @@ export default defineComponent({
   },
   setup(props, { slots }) {
     return () => (
-      <pop-container
+      <popContainer
         {...props}
+        name={_name}
         v-slots={{
           trigger: () => slots.trigger && slots.trigger()
         }}>
         {slots.default && slots.default()}
-      </pop-container>
+      </popContainer>
     )
   }
 })

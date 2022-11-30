@@ -3,7 +3,7 @@ import { popContainerProps } from './props'
 import './style/index.css'
 import { useElementHover, onClickOutside } from '@vueuse/core'
 import type { PopContainerPropsPlacement } from './type'
-import { overflowDetection } from './src/overflow-detection'
+// import { overflowDetection } from './src/overflow-detection'
 
 export default defineComponent({
   name: 'SPopContainer',
@@ -20,7 +20,7 @@ export default defineComponent({
     const popTranslate = ref('')
     const isHovered = useElementHover(popRef)
     const popContentRef = ref<HTMLElement | null>(null)
-    const popShowFlag = ref<boolean>(false)
+    const popShowFlag = ref<boolean>(props.show)
 
     const popArrow = ref('')
     const popBoxFlex = ref('')
@@ -160,7 +160,7 @@ export default defineComponent({
             {popShowFlag.value && (
               <div class="s-pop-box" style={`${popBoxFlex.value} transform: ${popTranslate.value}`}>
                 <div class={`s-pop--arrow ${popArrow.value} ${props.showArrow ? '' : 's-pop--arrow__none'}`} />
-                <div class={`s-pop-box--content ${props.raw ? '' : 's-pop-box__no__raw'}`}>
+                <div class={`${props.name} s-pop-box--content ${props.raw ? '' : 's-pop-box__no__raw'}`}>
                   {slots.default && slots.default()}
                 </div>
               </div>

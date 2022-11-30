@@ -14,10 +14,12 @@ export const popContainerProps = {
     type: String as PropType<PopContainerPropsPlacement>,
     default: 'top'
   },
-  flag: {
+  name: {
     type: String as PropType<PopSubFlag>,
-    default: 'popover'
-  }
+    default: 'popover',
+    require: true
+  },
+  show: Boolean
 }
 
-export type PopContainerProps = ExtractPropTypes<typeof popContainerProps>
+export type PopContainerProps = Partial<ExtractPropTypes<typeof popContainerProps>>

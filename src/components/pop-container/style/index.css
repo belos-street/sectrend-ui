@@ -22,8 +22,6 @@
   opacity: 0;
 }
 
-
-
 .s-pop-box {
   position: relative;
   display: flex;
@@ -38,15 +36,15 @@
 }
 
 .s-pop-box__no__raw {
-  padding: 4px 8px;
-  background-color: var(--s-color-theme);
+  padding: 6px;
+  background-color: var(--s-bg-color);
 }
 
 .s-pop--arrow {
   --s-pop-arrow-translate-px: 8px;
   width: 6px;
   height: 6px;
-  background-color: var(--s-color-theme);
+  background-color: var(--s-bg-color);
   filter: brightness(50%);
   clip-path: polygon(0 100%, 50% 0, 100% 100%);
 }
@@ -56,7 +54,6 @@
 }
 
 .s-theme__dark .s-pop--arrow {
-  background-color: var(--s-color-theme);
   filter: contrast(80%);
 }
 

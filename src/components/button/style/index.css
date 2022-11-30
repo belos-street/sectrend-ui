@@ -75,6 +75,8 @@
 /** text */
 .s-button--text {
   background-color: transparent;
+  padding: 0;
+  height: auto;
 }
 
 .s-button--text.s-button:hover {

@@ -1,0 +1,23 @@
+.s-popconfirm-container {
+  display: flex;
+  --s-popconfirm-gap: 8px;
+}
+
+.s-popconfirm {}
+
+.s-popconfirm-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.s-popconfirm-footer {
+  display: flex;
+  justify-content: end;
+  gap: var(--s-popconfirm-gap);
+  margin-top: var(--s-popconfirm-gap);
+}
+
+.s-popconfirm-icon {
+  margin-right: var(--s-popconfirm-gap);
+}

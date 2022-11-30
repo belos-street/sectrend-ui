@@ -1,0 +1,19 @@
+.s-icon--type__info {
+  color: var(--s-color-type-info);
+}
+
+.s-icon--type__success {
+  color: var(--s-color-type-success);
+}
+
+.s-icon--type__warn {
+  color: var(--s-color-type-warn);
+}
+
+.s-icon--type__danger {
+  color: var(--s-color-type-danger);
+}
+
+.s-theme__dark .s-icon--type {
+  filter: contrast(70%);
+}

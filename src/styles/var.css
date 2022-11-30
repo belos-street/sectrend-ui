@@ -20,10 +20,14 @@
   --s-cubic-bezier: cubic-bezier(0.075, 0.82, 0.165, 1);
 
   /** shadow */
-  --s-box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)
+  --s-box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+  /** bg */
+  --s-bg-color: rgb(255, 255, 255);
 }
 
 html.s-theme__dark {
   --s-color-theme: #242424;
   --s-color-font: rgba(235, 235, 235, 0.64);
+  --s-bg-color: #3f3f45;
 }
