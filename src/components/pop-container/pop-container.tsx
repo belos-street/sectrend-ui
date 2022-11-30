@@ -26,12 +26,18 @@ export default defineComponent({
     const popArrow = ref('')
     const popBoxFlex = ref('')
 
+    /** 单向数据流修改数值 */
     watch(
       () => props.show,
-      () => {
-        emit('update:show', popShowFlag.value)
+      (newVal) => {
+        popShowFlag.value = newVal
       }
     )
+
+    /** 通知上级组件更新数据 */
+    watch(popShowFlag, (newVal) => {
+      emit('update:show', newVal)
+    })
 
     /**
      * 处理Trigger的click事件

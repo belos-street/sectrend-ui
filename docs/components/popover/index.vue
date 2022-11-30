@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import codeText from './index.vue?raw'
+const isShow = ref(true)
+
+setTimeout(() => {
+  isShow.value = false
+}, 3000)
 </script>
 
 <template>
@@ -149,9 +155,9 @@ import codeText from './index.vue?raw'
     </s-popover>
   </div>
 
-  <h4>控制隐藏显示</h4>
+  <h4>控制隐藏显示 - {{ isShow }}</h4>
   <div class="b">
-    <s-popover :show="true" placement="bottom">
+    <s-popover v-model:show="isShow" placement="bottom">
       控制隐藏显示
       <template #trigger>
         <s-button type="info">hover me</s-button>
