@@ -1,6 +1,7 @@
 import { defineComponent, inject, ref, watch } from 'vue'
 import { popconfirmProps } from './props'
 import { PopContainer } from '../pop-container'
+import { Button as SButton } from '../button'
 import { Icon } from '../icon'
 import { _name } from '.'
 import { zhCN } from '../../locale'
@@ -14,24 +15,28 @@ import '../../styles/icon-type.css'
 export default defineComponent({
   name: 'SPopconfirm',
   props: popconfirmProps,
-  components: {
-    PopContainer
-  },
+  components: { PopContainer, SButton, Icon },
   emits: ['confirm-click', 'cancel-click', 'update:show'],
   setup(props, { slots, emit }) {
     const lang = inject(configProviderLocaleKey, zhCN)
     const popShow = ref(props.show)
 
-    watch(props, () => {
-      console.log('popShow bianle ', popShow.value)
-      emit('update:show', popShow.value)
+    watch(
+      () => props.show,
+      (newVal) => {
+        popShow.value = newVal
+      }
+    )
+
+    watch(popShow, (newVal) => {
+      emit('update:show', newVal)
     })
 
     return () => (
       <PopContainer
         {...props}
         name={_name}
-        v-model:show={props.show}
+        v-model:show={popShow.value}
         v-slots={{
           trigger: () => slots.trigger && slots.trigger()
         }}>

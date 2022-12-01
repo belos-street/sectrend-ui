@@ -48,11 +48,11 @@ const router = createRouter({
           name: 'popconfirm',
           component: () => import('../components/popconfirm/index.vue')
         },
-        // {
-        //   path: 'dropdown',
-        //   name: 'dropdown',
-        //   component: () => import('../components/dropdown/index.vue')
-        // },
+        {
+          path: 'dropdown',
+          name: 'dropdown',
+          component: () => import('../components/dropdown/index.vue')
+        },
         {
           path: 'tag',
           name: 'tag',

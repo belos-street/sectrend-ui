@@ -2,18 +2,16 @@
 import { ref } from 'vue'
 import codeText from './index.vue?raw'
 import { Star } from '../../../src/icon'
+
+const actionShow = ref(false)
 const isShow = ref(false)
 
-setTimeout(() => {
-  isShow.value = true
-}, 6000)
-
-const handCancelClick = (value: any) => {
-  console.log(value)
+const handleConfirmClick = () => {
+  actionShow.value = false
 }
 
-const handleConfirmClick = (value: any) => {
-  console.log(value)
+const handCancelClick = () => {
+  console.log('cancel click')
 }
 </script>
 
@@ -25,7 +23,7 @@ const handleConfirmClick = (value: any) => {
     <s-popconfirm placement="top-start">
       233
       <template #trigger>
-        <s-button type="info">hover me</s-button>
+        <s-button type="info">click me</s-button>
       </template>
     </s-popconfirm>
   </div>
@@ -95,7 +93,12 @@ const handleConfirmClick = (value: any) => {
 
   <h4>事件</h4>
   <div class="b">
-    <s-popconfirm placement="top-start" @cancel-click="handCancelClick" @confirm-click="handleConfirmClick">
+    <s-popconfirm
+      v-model:show="actionShow"
+      placement="top-start"
+      @cancel-click="handCancelClick"
+      @confirm-click="handleConfirmClick"
+    >
       positive-click & negative-click
       <template #trigger>
         <s-button type="success">positive-click & negative-click</s-button>
@@ -116,11 +119,11 @@ const handleConfirmClick = (value: any) => {
     </s-popconfirm>
   </div>
 
-  <h4>test</h4>
+  <h4>控制隐藏显示 - {{ isShow }}</h4>
   <s-popconfirm placement="top-start" v-model:show="isShow">
-    dangerdangerdanger - {{ isShow }}
+    dangerdangerdanger -
     <template #action>
-      <s-button type="success" text>Success</s-button>
+      <s-button type="success" text @click="isShow = false">Success</s-button>
     </template>
     <template #trigger>
       <s-button type="danger">danger操作</s-button>

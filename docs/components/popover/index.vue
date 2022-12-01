@@ -2,10 +2,6 @@
 import { ref } from 'vue'
 import codeText from './index.vue?raw'
 const isShow = ref(true)
-
-setTimeout(() => {
-  isShow.value = false
-}, 3000)
 </script>
 
 <template>

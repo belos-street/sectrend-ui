@@ -1,1 +1,1 @@
-export function overflowDetection() { }
+export function overflowDetection() {}

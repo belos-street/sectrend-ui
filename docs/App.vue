@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Header from './frame/header/index.vue'
-import { zhCN, enGB } from '@/locale'
+import { enGB } from '@/locale'
 
 const theme = ref('light')
 
