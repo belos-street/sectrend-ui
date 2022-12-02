@@ -59,8 +59,8 @@ export default defineComponent({
                   <s-button
                     size="small"
                     onClick={(e: Event) => {
-                      popShow.value = false
                       emit('cancel-click', e)
+                      popShow.value = false
                     }}>
                     {props.cancelText ? props.cancelText : lang.cancel}
                   </s-button>

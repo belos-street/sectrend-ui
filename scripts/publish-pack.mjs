@@ -15,7 +15,7 @@ cd('./dist')
 await $`pwd`
 
 await $`npm config set registry https://registry.npmjs.org/`
-
+sleep(1000)
 await $`npm publish`
 
 await $`npm config set registry https://registry.npmmirror.com/`

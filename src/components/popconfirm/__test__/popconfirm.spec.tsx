@@ -21,7 +21,7 @@ describe('popconfirm test', () => {
   })
 
   it('mount props type', async () => {
-    const wrapper = mount(popconfirm, {
+    let wrapper = mount(popconfirm, {
       slots: { default: <>hello</>, trigger: <div>trigger</div> },
       props: {
         type: 'success'
@@ -31,6 +31,26 @@ describe('popconfirm test', () => {
     await wrapper.get('.s-pop-trigger--container').trigger('click')
     //success icon svg
     expect(wrapper.element.innerHTML).toContain('<path class="c" d="M80,0a80,80,0,1,0,80,80A80,80,0,0,0,80,')
+
+    wrapper = mount(popconfirm, {
+      slots: { default: <>hello</>, trigger: <div>trigger</div> },
+      props: {
+        type: 'danger'
+      }
+    })
+    await wrapper.get('.s-pop-trigger--container').trigger('click')
+    //danger icon svg
+    expect(wrapper.element.innerHTML).toContain('<path class="c" d="M100.274,20.529a80,80')
+
+    wrapper = mount(popconfirm, {
+      slots: { default: <>hello</>, trigger: <div>trigger</div> },
+      props: {
+        type: 'warn'
+      }
+    })
+    await wrapper.get('.s-pop-trigger--container').trigger('click')
+    //warn icon svg
+    expect(wrapper.element.innerHTML).toContain('<path class="a" d="M80,0A80,80,0,1,1,0,80,80.235,80.235,0,0,1,80')
   })
 
   it('mount icon slots', async () => {
@@ -77,7 +97,8 @@ describe('popconfirm test', () => {
       slots: {
         default: <>hello</>,
         trigger: <div>trigger</div>
-      }
+      },
+      props: { trigger: 'click' }
     })
 
     await wrapper.get('.s-pop-trigger--container').trigger('click')

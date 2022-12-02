@@ -1,5 +1,4 @@
-import { defineComponent, inject } from 'vue'
-import { configProviderLocaleKey } from '../config-provider/type'
+import { defineComponent } from 'vue'
 import { dividerProps } from './props'
 import { setClass, setDividerLineClass } from './src/set-class'
 import './style/index.css'
@@ -8,8 +7,6 @@ export default defineComponent({
   name: 'SDivider',
   props: dividerProps,
   setup(props) {
-    const obj = inject(configProviderLocaleKey)
-    console.log(obj)
     return () => (
       <div class={setClass(props)}>
         {props.titleText && !props.vertical && (
