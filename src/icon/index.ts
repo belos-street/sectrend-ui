@@ -8,5 +8,6 @@ import Success from './Success.vue'
 import Warn from './Warn.vue'
 import Danger from './Danger.vue'
 import Info from './Info.vue'
+import Closable from './Closable.vue'
 
-export { Edit, Star, Refresh, Setting, Loading, Compass, Success, Warn, Info, Danger }
+export { Edit, Star, Refresh, Setting, Loading, Compass, Success, Warn, Info, Danger, Closable }

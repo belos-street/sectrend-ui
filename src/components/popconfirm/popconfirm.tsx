@@ -20,7 +20,6 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const lang = inject(configProviderLocaleKey, zhCN)
     const popShow = ref(props.show)
-
     watch(
       () => props.show,
       (newVal) => {

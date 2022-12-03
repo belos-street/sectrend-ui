@@ -10,7 +10,6 @@ declare module 'vue' {
     SDivider: typeof import('./src/entry')['SDivider']
     SConfigProvider: typeof import('./src/entry')['SConfigProvider']
     SSpace: typeof import('./src/entry')['SSpace']
-    SPopContainer: typeof import('./src/entry')['SPopContainer']
     SPopover: typeof import('./src/entry')['SPopover']
     SPopconfirm: typeof import('./src/entry')['SPopconfirm']
   }

@@ -27,11 +27,14 @@ const checkMode = () => {
     <div class="container-—item" @click="push('/components/space')">space</div>
     <div class="container-—item" @click="push('/components/popover')">popover</div>
     <div class="container-—item" @click="push('/components/popconfirm')">popconfirm</div>
+    <div class="container-—item" @click="push('/components/popdialog')">popdialog</div>
     <div class="container-—item" @click="push('/components/dropdown')">dropdown</div>
     <div class="container-—item" @click="push('/components/breadcrumb')">breadcrumb</div>
 
-    <div class="container-—item" @click="push('/components/breadcrumb')">Empty</div>
-    <div class="container-—item" @click="push('/components/breadcrumb')">抽屉</div>
+    <div class="container-—item" @click="push('/components/breadcrumb')">reslut</div>
+    <div class="container-—item" @click="push('/components/breadcrumb')">drawer</div>
+    <div class="container-—item" @click="push('/components/breadcrumb')">notification</div>
+    <div class="container-—item" @click="push('/components/breadcrumb')">spin</div>
   </div>
 </template>
 

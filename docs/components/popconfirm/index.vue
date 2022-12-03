@@ -49,7 +49,7 @@ const handCancelClick = () => {
           <s-button type="warn">Warn</s-button>
         </template>
       </s-popconfirm>
-      <s-popconfirm type="danger">
+      <s-popconfirm type="danger" trigger="hover">
         DangerDangerDanger
         <template #trigger>
           <s-button type="danger">Danger</s-button>

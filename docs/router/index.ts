@@ -49,6 +49,11 @@ const router = createRouter({
           component: () => import('../components/popconfirm/index.vue')
         },
         {
+          path: 'popdialog',
+          name: 'popdialog',
+          component: () => import('../components/popdialog/index.vue')
+        },
+        {
           path: 'dropdown',
           name: 'dropdown',
           component: () => import('../components/dropdown/index.vue')

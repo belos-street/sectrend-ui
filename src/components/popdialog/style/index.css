@@ -1,0 +1,24 @@
+.s-popdialog-header {
+  display: flex;
+  position: relative;
+}
+
+.s-popdialog-divider.s-divider--horizontal {
+  margin: 6px 0;
+}
+
+.s-popdialog-header .s-popdialog-header--closable {
+  position: absolute;
+  right: 0;
+}
+
+.s-popdialog-header .s-popdialog-header--closable {
+  height: 16px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.s-popdialog-header .s-popdialog-header--closable:hover {
+  border-radius: var(--s-radius);
+  background-color: black;
+}
