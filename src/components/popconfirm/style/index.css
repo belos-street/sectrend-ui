@@ -20,4 +20,5 @@
 
 .s-popconfirm-icon {
   margin-right: var(--s-popconfirm-gap);
+  margin-top: 2px;
 }

@@ -27,7 +27,14 @@ const isShow = ref(true)
         </template>
       </s-popover>
       <s-popover trigger="click">
-        click
+        <div class="test">
+          clickclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick
+          meclick meclick meclick meclick meclick meclick meclickclick meclick meclick meclick meclick meclick meclick
+          meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick
+          meclickclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick
+          meclick meclick meclick meclick meclick meclick meclick meclickclick meclick meclick meclick meclick meclick
+          meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick meclick me
+        </div>
         <template #trigger>
           <s-button type="danger">click me</s-button>
         </template>
@@ -230,5 +237,12 @@ const isShow = ref(true)
 
 .div12 {
   grid-area: 2 / 1 / 3 / 2;
+}
+
+.test {
+  height: 200px;
+  width: 200px;
+  overflow: auto;
+  white-space: normal;
 }
 </style>

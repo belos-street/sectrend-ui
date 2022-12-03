@@ -10,15 +10,16 @@
 .s-popdialog-header .s-popdialog-header--closable {
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 
-.s-popdialog-header .s-popdialog-header--closable {
+/* .s-popdialog-header .s-popdialog-header--closable {
   height: 16px;
   width: 15px;
-  cursor: pointer;
+ 
 }
 
 .s-popdialog-header .s-popdialog-header--closable:hover {
   border-radius: var(--s-radius);
   background-color: black;
-}
+} */
