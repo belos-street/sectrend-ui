@@ -13,5 +13,15 @@ declare module 'vue' {
     SPopover: typeof import('./src/entry')['SPopover']
     SPopconfirm: typeof import('./src/entry')['SPopconfirm']
     SPopdialog: typeof import('./src/entry')['SPopdialog']
+    SBreadcrumb: typeof import('./src/entry')['SBreadcrumb']
+    SBreadcrumbItem: typeof import('./src/entry')['SBreadcrumbItem']
+  }
+  interface ComponentCustomProps {
+    // hello?: string
+  }
+
+  interface ComponentCustomProperties {
+    //    $http: typeof axios
+    // $translate: (key: string) => string
   }
 }

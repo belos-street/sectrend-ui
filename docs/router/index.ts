@@ -59,6 +59,11 @@ const router = createRouter({
           component: () => import('../components/dropdown/index.vue')
         },
         {
+          path: 'breadcrumb',
+          name: 'breadcrumb',
+          component: () => import('../components/breadcrumb/index.vue')
+        },
+        {
           path: 'tag',
           name: 'tag',
           component: () => import('../components/tag/index.vue')

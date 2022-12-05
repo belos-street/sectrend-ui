@@ -5,6 +5,7 @@
   --s-color-type-warn: rgba(255, 186, 40, 1);
   --s-color-type-danger: rgba(236, 75, 75, 1);
   --s-color-font: rgba(102, 102, 102, 1);
+  --s-color-font-sub: rgba(102, 102, 102, 0.7);
   --s-color-font-white: rgb(255, 255, 255);
   --s-color-font-black: rgb(0, 0, 0);
 
@@ -12,8 +13,8 @@
   --s-font-size-small: 12px;
   --s-font-size: 14px;
   --s-font-size-large: 16px;
-
   --s-radius: 3px;
+  --s-font-weight-500: 500;
 
   /** transition */
   --s-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -24,10 +25,13 @@
 
   /** bg */
   --s-bg-color: rgb(255, 255, 255);
+  --s-bg-color-hover: rgb(0, 0, 0, .3);
 }
 
 html.s-theme__dark {
   --s-color-theme: #242424;
   --s-color-font: rgba(235, 235, 235, 0.64);
-  --s-bg-color: #3f3f45;
+  --s-color-font-sub: rgba(235, 235, 235, 0.50);
+  --s-bg-color: rgb(63, 63, 69);
+  --s-bg-color-hover: rgb(63, 63, 69, .7);
 }
