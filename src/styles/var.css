@@ -25,7 +25,7 @@
 
   /** bg */
   --s-bg-color: rgb(255, 255, 255);
-  --s-bg-color-hover: rgb(0, 0, 0, .3);
+  --s-bg-color-hover: rgb(0, 0, 0, .15);
 }
 
 html.s-theme__dark {

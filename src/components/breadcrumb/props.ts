@@ -8,7 +8,8 @@ export const breadcrumbProps = {
 
 export const breadcrumbItemProps = {
   clickable: Boolean,
-  href: String
+  href: String,
+  isLast: Boolean
 }
 
 export type BreadcrumbProps = ExtractPropTypes<typeof breadcrumbProps>

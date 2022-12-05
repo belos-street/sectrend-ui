@@ -18,7 +18,9 @@ export default defineComponent({
             class={`s-breadcrumb-item--container${
               index === itemList.value!.length - 1 ? ' s-breadcrumb-item--container__last' : ''
             }`}>
-            {h(item)}
+            {h(item, {
+              isLast: index === itemList.value!.length - 1
+            })}
             <span class="s-breadcrumb-item--separator"> {props.separator} </span>
           </div>
         ))}
