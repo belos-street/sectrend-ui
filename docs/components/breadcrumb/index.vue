@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { Star } from '../../../src/icon'
+import codeText from './index.vue?raw'
+
 const list = ref(['Item5', 'Item6', 'Item7'])
+const { push } = useRouter()
+
+const handleItemClick = (path?: string) => path && push(path)
 </script>
 
 <template>
@@ -33,12 +39,17 @@ const list = ref(['Item5', 'Item6', 'Item7'])
   <h4>是否可点击与链接地址</h4>
   <div class="b">
     <s-breadcrumb>
-      <s-breadcrumb-item clickable href="/components/button">Item1</s-breadcrumb-item>
-      <s-breadcrumb-item clickable href="/">Item2</s-breadcrumb-item>
+      <s-breadcrumb-item clickable href="/components/button" @click="handleItemClick">Item1</s-breadcrumb-item>
+      <s-breadcrumb-item clickable href="/" @click="handleItemClick">Item2</s-breadcrumb-item>
       <s-breadcrumb-item clickable><s-icon :icon="Star" /> </s-breadcrumb-item>
       <s-breadcrumb-item clickable>Item4</s-breadcrumb-item>
     </s-breadcrumb>
   </div>
+
+  <h3>code</h3>
+  <hr />
+
+  <pre>{{ codeText }}</pre>
 </template>
 
 <style scoped>

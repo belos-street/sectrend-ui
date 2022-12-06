@@ -1,0 +1,52 @@
+.s-spin {
+  position: relative;
+  display: inline-block;
+  --s-spin-logo-size: 24px;
+  --s-spin-logo-size-small: 18px;
+  --s-spin-logo-size-large: 30px;
+}
+
+.s-spin .s-spin--content {
+  display: inline-block;
+}
+
+.s-spin .s-spin--body {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--s-bg-color-mask);
+  color: var(--s-color-type-info);
+}
+
+.s-spin .s-spin--icon {
+  font-size: var(--s-spin-logo-size);
+}
+
+.s-spin .s-spin--icon.s-spin--icon__small {
+  font-size: var(--s-spin-logo-size-small);
+}
+
+.s-spin .s-spin--icon.s-spin--icon__large {
+  font-size: var(--s-spin-logo-size-large);
+}
+
+
+.s-spin .s-spin--description {
+  margin-top: -8px;
+}
+
+.s-spin-enter-active,
+.s-spin-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.s-spin-enter-from,
+.s-spin-leave-to {
+  opacity: 0;
+}

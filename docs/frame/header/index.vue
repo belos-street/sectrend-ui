@@ -31,10 +31,10 @@ const checkMode = () => {
     <div class="container-—item" @click="push('/components/dropdown')">dropdown</div>
     <div class="container-—item" @click="push('/components/breadcrumb')">breadcrumb</div>
 
-    <div class="container-—item" @click="push('/components/breadcrumb')">reslut</div>
-    <div class="container-—item" @click="push('/components/breadcrumb')">drawer</div>
-    <div class="container-—item" @click="push('/components/breadcrumb')">notification</div>
-    <div class="container-—item" @click="push('/components/breadcrumb')">spin</div>
+    <div class="container-—item" @click="push('/components/reslut')">reslut</div>
+    <div class="container-—item" @click="push('/components/drawer')">drawer</div>
+    <div class="container-—item" @click="push('/components/notification')">notification</div>
+    <div class="container-—item" @click="push('/components/spin')">spin</div>
   </div>
 </template>
 

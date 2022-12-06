@@ -1,9 +1,9 @@
 :root {
   --s-color-theme: rgb(255, 255, 255);
-  --s-color-type-info: rgba(53, 154, 222, 1);
-  --s-color-type-success: rgba(66, 218, 142, 1);
-  --s-color-type-warn: rgba(255, 186, 40, 1);
-  --s-color-type-danger: rgba(236, 75, 75, 1);
+  --s-color-type-info: hsla(204, 72%, 54%, 1);
+  --s-color-type-success: hsla(150, 67%, 56%, 1);
+  --s-color-type-warn: hsla(41, 100%, 58%, 1);
+  --s-color-type-danger: hsla(0, 81%, 61%, 1);
   --s-color-font: rgba(102, 102, 102, 1);
   --s-color-font-sub: rgba(102, 102, 102, 0.7);
   --s-color-font-white: rgb(255, 255, 255);
@@ -26,6 +26,7 @@
   /** bg */
   --s-bg-color: rgb(255, 255, 255);
   --s-bg-color-hover: rgb(0, 0, 0, .15);
+  --s-bg-color-mask: rgba(255, 255, 255, 0.75);
 }
 
 html.s-theme__dark {
@@ -34,4 +35,9 @@ html.s-theme__dark {
   --s-color-font-sub: rgba(235, 235, 235, 0.50);
   --s-bg-color: rgb(63, 63, 69);
   --s-bg-color-hover: rgb(63, 63, 69, .7);
+  --s-bg-color-mask: rgba(0, 0, 0, 0.65);
+  --s-color-type-info: hsla(204, 52%, 54%, 1);
+  --s-color-type-success: hsla(150, 47%, 56%, 1);
+  --s-color-type-warn: hsla(41, 80%, 58%, 1);
+  --s-color-type-danger: hsla(0, 61%, 61%, 1);
 }

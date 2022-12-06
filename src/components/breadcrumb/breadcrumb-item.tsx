@@ -8,16 +8,13 @@ export default defineComponent({
   props: breadcrumbItemProps,
   emits: ['click'],
   setup(props, { slots, emit }) {
-    const handleClick = (e: Event) => {
-      emit('click', e)
-      if (!props.href) return
-      // window.location.href = props.href
-      window.history.replaceState(null, '', props.href)
+    const handleClick = () => {
+      emit('click', props.href ? props.href : '')
     }
     return () => (
       <div
         class={`s-breadcrumb-item${props.clickable && !props.isLast ? ' s-breadcrumb-item--click' : ''}`}
-        onClick={(e) => !props.isLast && props.clickable && handleClick(e)}>
+        onClick={() => !props.isLast && props.clickable && handleClick()}>
         {renderSlot(slots, 'default')}
       </div>
     )

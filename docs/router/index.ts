@@ -64,6 +64,11 @@ const router = createRouter({
           component: () => import('../components/breadcrumb/index.vue')
         },
         {
+          path: 'spin',
+          name: 'spin',
+          component: () => import('../components/spin/index.vue')
+        },
+        {
           path: 'tag',
           name: 'tag',
           component: () => import('../components/tag/index.vue')
@@ -71,11 +76,6 @@ const router = createRouter({
       ]
     }
   ]
-})
-
-router.beforeEach((to, from, next) => {
-  console.log(to, from)
-  next()
 })
 
 export default router

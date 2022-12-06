@@ -7,7 +7,7 @@
  * |
  * 设置回淘宝源
  * |
- * 主目录的package.json 版本号+1 (未完成)
+ * 主目录的package.json 版本号+1 (未完成) npm version patch
  * 
  * @date 2022-11-22
  */

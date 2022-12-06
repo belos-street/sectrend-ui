@@ -15,6 +15,7 @@ declare module 'vue' {
     SPopdialog: typeof import('./src/entry')['SPopdialog']
     SBreadcrumb: typeof import('./src/entry')['SBreadcrumb']
     SBreadcrumbItem: typeof import('./src/entry')['SBreadcrumbItem']
+    SSpin: typeof import('./src/entry')['SSpin']
   }
   interface ComponentCustomProps {
     // hello?: string

@@ -64,11 +64,10 @@
 
 .s-theme__dark .s-button {
   --s-button-color-font: var(--s-color-font-black);
-  filter: contrast(70%);
 }
 
 .s-theme__dark .s-button:hover {
-  filter: contrast(50%);
+  filter: contrast(70%);
   transition: all 1s var(--s-cubic-bezier);
 }
 
