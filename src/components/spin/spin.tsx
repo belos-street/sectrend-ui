@@ -10,7 +10,6 @@ export default defineComponent({
   props: spinProps,
   components: { Transition, Icon },
   setup(props, { slots }) {
-    console.log(props.size)
     return () => (
       <div class="s-spin">
         <div class="s-spin--content">{renderSlot(slots, 'default')}</div>
