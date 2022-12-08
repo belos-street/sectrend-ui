@@ -69,6 +69,11 @@ const router = createRouter({
           component: () => import('../components/spin/index.vue')
         },
         {
+          path: 'drawer',
+          name: 'drawer',
+          component: () => import('../components/drawer/index.vue')
+        },
+        {
           path: 'tag',
           name: 'tag',
           component: () => import('../components/tag/index.vue')

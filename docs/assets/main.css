@@ -3,6 +3,8 @@
 #app {
   padding: 1rem;
   font-weight: normal;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .c {

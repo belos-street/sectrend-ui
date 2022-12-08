@@ -10,6 +10,7 @@ import { Popconfirm as SPopconfirm } from './components/popconfirm'
 import { Popdialog as SPopdialog } from './components/popdialog'
 import { Breadcrumb as SBreadcrumb, BreadcrumbItem as SBreadcrumbItem } from './components/breadcrumb'
 import { Spin as SSpin } from './components/spin'
+import { Drawer as SDrawer } from './components/drawer'
 
 import './styles/sectrend-ui.css'
 export * from './locale'
@@ -26,7 +27,8 @@ export {
   SPopdialog,
   SBreadcrumb,
   SBreadcrumbItem,
-  SSpin
+  SSpin,
+  SDrawer
 }
 
 export default {
@@ -43,5 +45,6 @@ export default {
     app.component(SBreadcrumb.name, SBreadcrumb)
     app.component(SBreadcrumbItem.name, SBreadcrumbItem)
     app.component(SSpin.name, SSpin)
+    app.component(SDrawer.name, SDrawer)
   }
 }

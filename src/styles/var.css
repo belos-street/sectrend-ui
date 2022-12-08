@@ -27,6 +27,7 @@
   --s-bg-color: rgb(255, 255, 255);
   --s-bg-color-hover: rgb(0, 0, 0, .15);
   --s-bg-color-mask: rgba(255, 255, 255, 0.75);
+  --s-bg-color-mask-gary: hsla(0, 0%, 70%, 0.6);
 }
 
 html.s-theme__dark {
@@ -40,4 +41,5 @@ html.s-theme__dark {
   --s-color-type-success: hsla(150, 47%, 56%, 1);
   --s-color-type-warn: hsla(41, 80%, 58%, 1);
   --s-color-type-danger: hsla(0, 61%, 61%, 1);
+  --s-bg-color-mask-gary: rgba(0, 0, 0, 0.65);
 }

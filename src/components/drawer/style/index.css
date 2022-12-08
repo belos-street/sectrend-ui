@@ -1,0 +1,80 @@
+.s-drawer-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: end;
+}
+
+.s-drawer-container .s-drawer--mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--s-bg-color-mask-gary);
+  z-index: 2000;
+  pointer-events: all;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.s-drawer-container .s-drawer {
+  height: 100%;
+  background-color: var(--s-bg-color);
+  display: inline-flex;
+  flex-direction: column;
+  z-index: 2000;
+  pointer-events: all;
+  --s-drawer-item-height: 50px;
+  --s-drawer-gap: 8px;
+}
+
+.s-drawer .s-drawer--header {
+  height: var(--s-drawer-item-height);
+  margin: 0 var(--s-drawer-gap);
+  display: flex;
+  align-items: center;
+  font-size: var(--s-font-size-large);
+}
+
+.s-drawer .s-drawer--content {
+  flex: 1;
+  margin: var(--s-drawer-gap);
+  word-break: break-all;
+  overflow-y: auto;
+}
+
+.s-drawer .s-drawer--footer {
+  height: var(--s-drawer-item-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-drawer-gap);
+  margin: 0 var(--s-drawer-gap);
+}
+
+.s-drawer .s-drawer--divider {
+  margin: 0;
+}
+
+.s-drawer-right-enter-active,
+.s-drawer-right-leave-active {
+  transition: all .5s ease;
+}
+
+.s-drawer-right-enter-from,
+.s-drawer-right-leave-to {
+  transform: translateX(100%);
+}
+
+.s-drawer-mask-enter-active,
+.s-drawer-mask-leave-active {
+  transition: opacity .5s ease;
+}
+
+.s-drawer-mask-enter-from,
+.s-drawer-mask-leave-to {
+  opacity: 0;
+}

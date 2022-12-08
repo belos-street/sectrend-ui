@@ -8,7 +8,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
-//juejin.cn/book/7117582869358182403/section/7129420343587897385
 
 export default defineConfig({
   test: {

@@ -74,6 +74,7 @@ const isShow = ref(false)
 <style scoped>
 h4 {
   margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .b {
@@ -84,7 +85,8 @@ h4 {
   width: 500px;
 }
 
-.b-size .s-spin {
-  margin-right: 40px;
+.b-size {
+  display: flex;
+  gap: 40px;
 }
 </style>
