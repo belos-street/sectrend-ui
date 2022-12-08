@@ -10,7 +10,6 @@ export const drawerProps = {
     default: placements[1],
     validator: validatorPlacement
   },
-  show: Boolean,
   width: {
     type: Number,
     default: undefined
@@ -19,7 +18,7 @@ export const drawerProps = {
     type: Number,
     default: undefined
   },
-  closable: Boolean,
+  show: Boolean,
   maskClose: Boolean,
   confirmText: String,
   cancelText: String,
