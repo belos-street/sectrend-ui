@@ -6,9 +6,66 @@
   bottom: 0;
   pointer-events: none;
   display: flex;
+}
+
+/* 抽屉弹出位置与动画效果 */
+.s-drawer-container.s-drawer--placement__left,
+.s-drawer-container.s-drawer--placement__top {
+  justify-content: start;
+}
+
+.s-drawer-container.s-drawer--placement__right,
+.s-drawer-container.s-drawer--placement__bottom {
   justify-content: end;
 }
 
+.s-drawer--placement__left .s-drawer,
+.s-drawer--placement__right .s-drawer {
+  height: 100%;
+}
+
+.s-drawer-container.s-drawer--placement__top,
+.s-drawer-container.s-drawer--placement__bottom {
+  flex-direction: column;
+}
+
+.s-drawer--placement__top .s-drawer,
+.s-drawer--placement__bottom .s-drawer {
+  width: 100%;
+}
+
+.s-drawer-right-enter-active,
+.s-drawer-left-enter-active,
+.s-drawer-top-enter-active,
+.s-drawer-bottom-enter-active,
+.s-drawer-right-leave-active,
+.s-drawer-left-leave-active,
+.s-drawer-top-leave-active,
+.s-drawer-bottom-leave-active {
+  transition: all .5s var(--s-cubic-bezier);
+}
+
+.s-drawer-right-enter-from,
+.s-drawer-right-leave-to {
+  transform: translateX(100%);
+}
+
+.s-drawer-left-enter-from,
+.s-drawer-left-leave-to {
+  transform: translateX(-100%);
+}
+
+.s-drawer-top-enter-from,
+.s-drawer-top-leave-to {
+  transform: translateY(-100%);
+}
+
+.s-drawer-bottom-enter-from,
+.s-drawer-bottom-leave-to {
+  transform: translateY(100%);
+}
+
+/* mask */
 .s-drawer-container .s-drawer--mask {
   width: 100vw;
   height: 100vh;
@@ -21,7 +78,6 @@
 }
 
 .s-drawer-container .s-drawer {
-  height: 100%;
   background-color: var(--s-bg-color);
   display: inline-flex;
   flex-direction: column;
@@ -57,16 +113,6 @@
 
 .s-drawer .s-drawer--divider {
   margin: 0;
-}
-
-.s-drawer-right-enter-active,
-.s-drawer-right-leave-active {
-  transition: all .5s ease;
-}
-
-.s-drawer-right-enter-from,
-.s-drawer-right-leave-to {
-  transform: translateX(100%);
 }
 
 .s-drawer-mask-enter-active,
