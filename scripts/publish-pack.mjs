@@ -19,3 +19,7 @@ sleep(1000)
 await $`npm publish`
 
 await $`npm config set registry https://registry.npmmirror.com/`
+
+cd('..')
+
+await $`npm version patch`

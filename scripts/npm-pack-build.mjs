@@ -13,7 +13,7 @@ const packJson = `{
   "license": "MIT",
   "main": "sectrend-ui.es.js",
   "types": "sectrend-ui.d.ts",
-  "homepage": "https://github.com/sectrend-front/morefish-ui",
+  "homepage": "https://github.com/aa1213889/sectrend-ui",
   "bugs": {
     "email": "869135421@qq.com"
   }
