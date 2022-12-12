@@ -12,7 +12,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const itemList = ref(slots.default && extractSlotsList(slots.default()))
     return () => (
-      <nav class={setClass(props)}>
+      <nav class={setClass()}>
         {itemList.value?.map((item, index) => (
           <div
             class={`s-breadcrumb-item--container${

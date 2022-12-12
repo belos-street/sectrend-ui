@@ -1,7 +1,6 @@
 import { _name } from '..'
-import type { BreadcrumbProps } from '../props'
 
-export const setClass = (props: BreadcrumbProps) => {
+export const setClass = () => {
   const classStr = _name
   return classStr
 }

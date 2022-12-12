@@ -1,8 +1,7 @@
-import { defineComponent, Teleport, Transition, renderSlot, inject, ref, watch, computed, type HTMLAttributes } from 'vue'
+import { defineComponent, Teleport, Transition, renderSlot, inject, ref, watch, computed } from 'vue'
 import { drawerProps, validatorPlacement } from './props'
 import { Divider } from '../divider'
 import { Button as SButton } from '../button'
-import { setClass } from './src/set-class'
 
 import { configProviderLocaleKey } from '../config-provider/type'
 import { zhCN } from '../../locale'
