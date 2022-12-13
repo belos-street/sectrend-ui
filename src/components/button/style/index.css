@@ -4,6 +4,8 @@
   --s-button-color-font: var(--s-color-font);
   --s-button-height: 34px;
   --s-button-font-size: var(--s-font-size);
+  --s-button-disabled-grayscale: grayscale(50%);
+
   cursor: pointer;
   text-align: center;
   box-sizing: border-box;
@@ -132,6 +134,7 @@
 /** loading */
 .s-button--loading {
   cursor: progress;
+  filter: var(--s-button-disabled-grayscale);
 }
 
 .s-button--loading:active {
@@ -146,7 +149,6 @@
 
 /** disabled */
 .s-button--disabled.s-button {
-  --s-button-disabled-grayscale: grayscale(50%);
   cursor: no-drop;
   filter: var(--s-button-disabled-grayscale);
 }
