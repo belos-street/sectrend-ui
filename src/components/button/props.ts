@@ -22,7 +22,7 @@ export const buttonProps = {
     default: 'default',
     validator: validatorSize
   },
-  htmlType: String
+  htmlType: String as PropType<'button' | 'submit' | 'reset' | undefined>
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
