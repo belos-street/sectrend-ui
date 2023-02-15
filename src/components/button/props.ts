@@ -21,7 +21,8 @@ export const buttonProps = {
     type: String as PropType<ButtonPropsSize>,
     default: 'default',
     validator: validatorSize
-  }
+  },
+  htmlType: String
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

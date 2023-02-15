@@ -22,7 +22,8 @@ export const drawerProps = {
   maskClose: Boolean,
   confirmText: String,
   cancelText: String,
-  title: String
+  title: String,
+  noFooter: Boolean
 }
 
 export type DrawerProps = ExtractPropTypes<typeof drawerProps>

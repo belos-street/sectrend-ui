@@ -63,20 +63,26 @@ export default defineComponent({
                 <Divider class="s-drawer--divider" />
                 <div class="s-drawer--content">{renderSlot(slots, 'default')}</div>
                 <Divider class="s-drawer--divider" />
-                <div class="s-drawer--footer">
-                  {slots.footer ? (
-                    renderSlot(slots, 'footer')
-                  ) : (
-                    <>
-                      <s-button onClick={() => handleAfterLeave()} size="small">
-                        {props.cancelText ?? lang.cancel}
-                      </s-button>
-                      <s-button size="small" type="info" loading={confirmLodingState.value} onClick={() => handleConfirm()}>
-                        {props.confirmText ?? lang.confirm}
-                      </s-button>
-                    </>
-                  )}
-                </div>
+                {!props.noFooter && (
+                  <div class="s-drawer--footer">
+                    {slots.footer ? (
+                      renderSlot(slots, 'footer')
+                    ) : (
+                      <>
+                        <s-button onClick={() => handleAfterLeave()} size="small">
+                          {props.cancelText ?? lang.cancel}
+                        </s-button>
+                        <s-button
+                          size="small"
+                          type="info"
+                          loading={confirmLodingState.value}
+                          onClick={() => handleConfirm()}>
+                          {props.confirmText ?? lang.confirm}
+                        </s-button>
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </Transition>

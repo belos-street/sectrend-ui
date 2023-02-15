@@ -28,6 +28,7 @@ const handleConfirm = (callback: Callback) => {
 }
 
 const isShow6 = ref(false)
+const isShow7 = ref(false)
 </script>
 
 <template>
@@ -113,6 +114,12 @@ const isShow6 = ref(false)
       <template #header> <s-icon :icon="Star" /> 我是自定义头部</template>
       <template #footer> 我是自定义底部 <s-button>click</s-button> </template>
     </s-drawer>
+  </div>
+
+  <h4>没有底部</h4>
+  <div class="b">
+    <s-button @click="isShow7 = true">click</s-button>
+    <s-drawer title="抽屉标题6" v-model:show="isShow7" mask-close :no-footer="true"> hihihihihihihi </s-drawer>
   </div>
 
   <h3>code</h3>

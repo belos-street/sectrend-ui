@@ -13,7 +13,8 @@ export default defineComponent({
       <button
         class={setClass(props)}
         disabled={props.disabled || props.loading}
-        onClick={(evt: MouseEvent) => emit('click', evt)}>
+        onClick={(evt: MouseEvent) => emit('click', evt)}
+        type={props.htmlType ?? 'button'}>
         {props.loading && (
           <div>
             <i class={`s-button--icon s-button--icon__loading`}>
